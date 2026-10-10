@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本東北賞楓・奧入瀨溪散策與八甲山纜車三晚溫泉 6 日手帳 (吉卜力水彩童話版)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f6ee; --card: #ffffff; --border: #383026;
+      --forest: #3d6a49; --forest-bg: #e6f0e9;
+      --sky: #46799c; --sky-bg: #e7f1f7;
+      --calcifer: #db5a3a; --calcifer-bg: #fbeee8;
+      --hay: #d4952c; --hay-bg: #fcf4e4;
+      --text: #2c251e; --muted: #796f63;
+      --shadow: 3px 3px 0px var(--border);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(#e8dfcf 1px, transparent 1px);
+      background-size: 20px 20px;
+      color: var(--text); line-height: 1.65; padding: 20px 12px 90px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+    .top-badge { text-align: center; margin-bottom: 14px; }
+    .top-badge span {
+      background: #f1ebd9; padding: 6px 18px; border-radius: 999px;
+      border: 2px solid var(--border); font-size: 0.88rem; font-weight: 800;
+      box-shadow: 2px 2px 0px var(--border); display: inline-flex; align-items: center; gap: 6px;
+    }
+    
+    /* STICKY NAV: Uses Native Hyperlinks for 100% Fail-safe Switching */
+    .nav {
+      display: flex; justify-content: center; gap: 5px; margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px);
+      padding: 6px; border-radius: 999px;
+      border: 2.5px solid var(--border); box-shadow: var(--shadow);
+      position: sticky; top: 10px; z-index: 999; overflow-x: auto; scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      padding: 7px 12px; font-size: 0.85rem; font-weight: 800; color: var(--muted);
+      border-radius: 999px; border: none; text-decoration: none; background: transparent;
+      transition: 0.15s; white-space: nowrap; display: inline-block; cursor: pointer;
+    }
+    .nav-btn:hover { background: rgba(0,0,0,0.05); color: var(--text); }
+    .nav-btn:active, .nav-btn.active { background: var(--calcifer); color: #fff; box-shadow: 1.5px 1.5px 0px var(--border); }
+    
+    .card {
+      background: #fff; border: 2.5px solid var(--border); border-radius: 20px;
+      padding: 20px; box-shadow: var(--shadow); margin-bottom: 22px;
+    }
+    .card h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .card p { font-size: 0.9rem; color: #403b35; line-height: 1.7; }
+    
+    .tip-box { padding: 9px 12px; border-radius: 10px; font-size: 0.84rem; line-height: 1.6; border: 1.5px solid var(--border); margin-top: 8px; }
+    .tip-red { background: #faeae6; color: #8f2314; border-color: #8f2314; }
+    .tip-green { background: #eaf3ec; color: #1c4826; }
+    .tip-blue { background: #e9f2f8; color: #1e4562; }
+    .tip-gold { background: #fbf3e2; color: #724c08; }
+    
+    /* RAIL TIMELINE TRACK */
+    .rail-timeline {
+      background: #fff; border: 2.5px solid var(--border); border-radius: 20px;
+      padding: 16px 12px 14px; box-shadow: var(--shadow); margin-bottom: 20px; overflow-x: auto;
+    }
+    .track { display: flex; align-items: center; min-width: 600px; position: relative; padding: 10px 0; }
+    .track-line { position: absolute; top: 25px; left: 16px; right: 16px; height: 4px; background: var(--border); z-index: 1; }
+    .stop { flex: 1; text-align: center; position: relative; z-index: 2; text-decoration: none; color: inherit; display: block; }
+    .dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--border); margin: 18px auto 6px; }
+    .stop:hover .dot { background: var(--calcifer); }
+    .stop.active .dot { background: var(--calcifer); box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--border); }
+    .loco {
+      position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+      background: var(--hay-bg); border: 2px solid var(--border); border-radius: 10px;
+      padding: 2px 7px; font-size: 0.8rem; font-weight: 800; white-space: nowrap;
+    }
+    .s-date { font-size: 0.82rem; font-weight: 800; }
+    .s-day { font-size: 0.72rem; color: var(--muted); font-weight: 700; }
+    .stop:hover .s-date, .stop.active .s-date { background: var(--calcifer); color: #fff; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--border); }
+    
+    .banner {
+      background: var(--forest-bg); border: 2.5px solid var(--border); border-radius: 20px;
+      padding: 16px; box-shadow: var(--shadow); margin-bottom: 14px; display: flex; align-items: center; gap: 14px;
+    }
+    .b-icon { width: 56px; height: 56px; border-radius: 16px; background: #fff; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; box-shadow: 2px 2px 0px var(--border); }
+    .b-title h3 { font-size: 0.82rem; font-weight: 900; color: var(--forest); }
+    .b-title h2 { font-size: 1.25rem; font-weight: 900; color: var(--text); line-height: 1.3; }
+    .b-title p { font-size: 0.82rem; color: var(--muted); font-weight: 700; }
+    
+    .strat-card { background: #fff; border: 2px solid var(--border); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px; }
+    .strat-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.86rem; }
+    .strat-badge { font-size: 0.74rem; font-weight: 900; padding: 2px 6px; border-radius: 5px; border: 1px solid var(--border); white-space: nowrap; flex-shrink: 0; }
+    
+    .v-timeline { position: relative; padding-left: 18px; margin-bottom: 35px; }
+    .v-line { position: absolute; left: 56px; top: 12px; bottom: 20px; width: 3px; border-left: 3px dashed var(--border); }
+    .t-entry { position: relative; display: flex; gap: 16px; margin-bottom: 12px; align-items: flex-start; }
+    .t-time { width: 44px; flex-shrink: 0; font-size: 0.84rem; font-weight: 900; color: var(--muted); padding-top: 10px; text-align: right; }
+    .t-node { position: absolute; left: 52px; top: 14px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2.5px solid var(--border); z-index: 2; }
+    .s-box { flex: 1; background: #fff; border: 2px solid var(--border); border-radius: 16px; padding: 14px; box-shadow: var(--shadow); }
+    .s-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+    .badge-k { font-size: 0.72rem; font-weight: 900; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); }
+    .badge-k.train { background: var(--calcifer-bg); color: #9c3319; }
+    .badge-k.spot { background: var(--forest-bg); color: #235232; }
+    .badge-k.food { background: var(--hay-bg); color: #875c12; }
+    .badge-k.flight { background: var(--sky-bg); color: #225170; }
+    .badge-k.hotel { background: #f3e8ff; color: #6b21a8; }
+    .s-title { font-size: 1.02rem; font-weight: 900; }
+    .s-desc { font-size: 0.88rem; color: #3e3831; line-height: 1.65; margin-top: 4px; }
+    .transit-bar { margin: 2px 0 12px 60px; }
+    .transit-pill { background: #fdfaf4; border: 1.5px solid var(--border); border-radius: 999px; padding: 4px 12px; font-size: 0.8rem; font-weight: 800; display: inline-flex; align-items: center; gap: 5px; box-shadow: 1px 1px 0px var(--border); }
+    
+    .link-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .link-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 11px; border-radius: 8px; font-size: 0.78rem; font-weight: 800; text-decoration: none; color: var(--text); background: #f1ebd9; border: 1.5px solid var(--border); box-shadow: 1px 1px 0px var(--border); }
+    .link-btn:hover { background: #fff; }
+    
+    .tbl { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .tbl th, .tbl td { border: 1.5px solid var(--border); padding: 8px 10px; font-size: 0.84rem; }
+    .tbl th { background: #ede6da; font-weight: 900; }
+    
+    .m-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border-bottom: 1.5px dashed #e8dfcf; cursor: pointer; }
+    .m-item:hover { background: #fcf9f2; }
+    .p-list { display: flex; flex-direction: column; gap: 10px; }
+    .p-card { background: #fff; border: 2px solid var(--border); border-radius: 14px; padding: 12px 14px; box-shadow: 2px 2px 0px var(--border); cursor: pointer; position: relative; }
+    .p-cn { font-size: 0.78rem; color: #796f63; font-weight: 700; }
+    .p-it { font-size: 1.15rem; font-weight: 900; }
+    
+    .back-btn { text-align: right; margin-top: -6px; margin-bottom: 24px; }
+    .back-btn a { font-size: 0.78rem; font-weight: 800; color: var(--forest); background: #fff; border: 1.5px solid var(--border); padding: 4px 10px; border-radius: 999px; text-decoration: none; box-shadow: 1px 1px 0px var(--border); }
+    
+    .modal { position: fixed; inset: 0; background: rgba(44,37,30,0.88); backdrop-filter: blur(6px); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 16px; }
+    .m-box { background: #fdfaf3; border: 3.5px solid var(--border); border-radius: 24px; padding: 32px 20px; max-width: 500px; width: 100%; text-align: center; box-shadow: 5px 5px 0px #000; }
+    .m-it { font-size: 2rem; font-weight: 900; line-height: 1.35; margin-bottom: 10px; color: var(--forest); }
+    .m-cn { font-size: 1.2rem; color: var(--calcifer); font-weight: 800; margin-bottom: 6px; }
+    .m-pronun { font-size: 0.9rem; color: var(--muted); margin-bottom: 20px; }
+    .m-actions { display: flex; justify-content: center; gap: 10px; }
+    .m-btn { padding: 9px 18px; border-radius: 12px; font-size: 0.9rem; font-weight: 900; cursor: pointer; border: 2px solid var(--border); box-shadow: 2px 2px 0px var(--border); }
+    .input-box { width: 100%; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--border); font-size: 1.1rem; font-weight: 900; background: #fcf9f2; outline: none; }
+  </style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <div class="top-badge">
+    <span>🍁 仙台東北賞楓・奧入瀨溪ｘ八甲山纜車三晚溫泉 6 日手帳 ｜ 2026.11.23 - 2026.11.28</span>
+  </div>
+
+  <!-- STICKY NATIVE NAV BAR (100% Reliable in Any App / Sandbox) -->
+  <nav class="nav">
+    <a href="#sec-schedule" class="nav-btn active">📅 行程</a>
+    <a href="#sec-flights" class="nav-btn">✈️ 航班</a>
+    <a href="#sec-overview" class="nav-btn">🗺️ 總覽</a>
+    <a href="#sec-menu" class="nav-btn">🍽️ 菜單匯率</a>
+    <a href="#sec-cards" class="nav-btn">🗣️ 語句卡</a>
+    <a href="#sec-pricing" class="nav-btn">💰 費用明細</a>
+    <a href="#sec-hotels" class="nav-btn">♨️ 溫泉住宿</a>
+    <a href="#sec-tips" class="nav-btn">💡 準備</a>
+  </nav>
+
+  <!-- ==================== 1. 每日行程 (首頁區) ==================== -->
+  <section id="sec-schedule">
+    <div class="rail-timeline">
+      <div class="track">
+        <div class="track-line"></div>
+        <a href="#day-1" class="stop active"><div class="loco">🚂 抵達仙台</div><div class="dot"></div><div class="s-date">11/23</div><div class="s-day">週一</div></a>
+        <a href="#day-2" class="stop"><div class="loco">🚂 猊鼻中尊</div><div class="dot"></div><div class="s-date">11/24</div><div class="s-day">週二</div></a>
+        <a href="#day-3" class="stop"><div class="loco">🚂 奧入瀨溪</div><div class="dot"></div><div class="s-date">11/25</div><div class="s-day">週三</div></a>
+        <a href="#day-4" class="stop"><div class="loco">🚂 弘前蘋果</div><div class="dot"></div><div class="s-date">11/26</div><div class="s-day">週四</div></a>
+        <a href="#day-5" class="stop"><div class="loco">🚂 銀山溫泉</div><div class="dot"></div><div class="s-date">11/27</div><div class="s-day">週五</div></a>
+        <a href="#day-6" class="stop"><div class="loco">🚂 松島賦歸</div><div class="dot"></div><div class="s-date">11/28</div><div class="s-day">週六</div></a>
+      </div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div id="day-1" style="scroll-margin-top: 80px;">
+      <div class="banner">
+        <div class="b-icon">🛫</div>
+        <div class="b-title">
+          <h3>Day 1 ｜ 11/23 (週一) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">🌤️ 仙台 6°C ~ 14°C</span></h3>
+          <h2>高雄小港直飛仙台空港 ➔ 抵達東北第一大城仙台 ➔ 入住市區飯店</h2>
+          <p>住 仙台市區 (KOKO / ROUTE INN / DORMY INN 或同級)</p>
+        </div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>午後搭乘台灣虎航直飛班機直達仙台，通關後專車接送前往仙台市區飯店入住，好好休息調養體力。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>抵達飯店後大行李一次安頓放妥，輕裝漫步飯店周邊或便利商店採買零食點心。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/24) 展開賞楓名所巡禮！搭乘猊鼻溪木舟清唱遊船，造訪平泉世界文化遺產中尊寺金色堂！</div></div>
+      </div>
+      <div class="v-timeline">
+        <div class="v-line"></div>
+        <div class="t-entry">
+          <div class="t-time">13:25</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k flight">✈️ 虎航直飛</span><div class="s-title">高雄小港 (KHH) ➔ 仙台空港 (SDJ) 台灣虎航 IT 772</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Sendai+Airport" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">搭乘台灣虎航直飛東北第一大門戶仙台（航程約 3h 45m），航程中享用精緻機上餐點。18:10 降落後專人引導通關。</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 搭乘專屬空調遊覽車約 45 分鐘前往仙台市區飯店</div></div>
+        <div class="t-entry">
+          <div class="t-time">19:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k hotel">🏨 安頓入住</span><div class="s-title">入住仙台市區飯店 (KOKO / ROUTE INN 或同級)</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Sendai+Station" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">辦理入住放下隨身行李，晚間可自由前往仙台車站商圈或青葉通街區漫步散策，品嚐道地仙台毛豆麻糬或消夜！</div>
+          </div>
+        </div>
+      </div>
+      <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div id="day-2" style="scroll-margin-top: 80px;">
+      <div class="banner">
+        <div class="b-icon">🚣</div>
+        <div class="b-title">
+          <h3>Day 2 ｜ 11/24 (週二) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">⛅ 岩手 3°C ~ 11°C</span></h3>
+          <h2>嚴美溪奇岩飛天糰子 ➔ 猊鼻溪遊船船夫舟歌 ➔ 平泉中尊寺金色堂 ➔ 高原溫泉</h2>
+          <p>♨️ 安比高原 ANA / 八幡平溫泉 (享受露天風呂大浴場)</p>
+        </div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>欣賞日本第一美溪嚴美溪峭壁奇岩，體驗纜繩吊籃飛天糰子；乘猊鼻溪扁舟穿梭奇岩峽谷；參訪平安時代藤原氏的世界遺產中尊寺金色堂。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>隨身小包備妥禦寒手套圍巾，大行李放置遊覽車行李廂，傍晚抵達安比高原飯店享受溫泉大浴場！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/25) 進入青森賞楓核心！奧入瀨溪流步道散策 ＋ 蔦沼燃燒紅葉 ＋ 搭八甲田高空纜車！</div></div>
+      </div>
+      <div class="v-timeline">
+        <div class="v-line"></div>
+        <div class="t-entry">
+          <div class="t-time">08:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🌊 第一美溪</span><div class="s-title">【嚴美溪】磐井川奇岩峽谷 ＆ 郭公飛天糰子 (空中飛籃體驗)</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Genbikei+Gorge" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">磐井川歷經萬年侵蝕形成的天然奇景！兩岸奇岩林立、碧綠深潭，體驗利用橫跨兩岸纜繩與木籃飛送的「郭公糰子」與熱茶！</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 30 分鐘前往猊鼻溪</div></div>
+        <div class="t-entry">
+          <div class="t-time">10:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🚣 輕舟舟歌</span><div class="s-title">【猊鼻溪遊船】日本百景・百米懸崖石灰岩峽谷木舟巡禮</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Geibikei+Gorge" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">搭乘由船夫以單支竹竿撐行的傳統木扁舟，緩緩穿行在高度超過 100 米的險峻石灰岩懸崖峭壁間，船夫於回程清唱動人的《猊鼻追分》民謠。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">12:15</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k food">🍱 日式御膳</span><div class="s-title">午餐：鹽燒香魚御膳或日式特色鄉土定食</div></div>
+            <div class="s-desc">品嚐炭火慢烤香魚、當令在地時蔬煮物與香Q東北白米飯。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">13:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">⛩️ 世界遺產</span><div class="s-title">【平泉中尊寺】天台宗東北大本山・特別安排進入★【金色堂】</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Chusonji+Temple" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">2011年登錄世界文化遺產！平安時代藤原清衡所建，全殿貼滿純金金箔的國寶「金色堂」，內部螺鈿蒔繪金碧輝煌，寄託佛教理想淨土。</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 1.5 小時前往安比高原 / 八幡平溫泉渡假勝地</div></div>
+        <div class="t-entry">
+          <div class="t-time">17:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k hotel">♨️ 高原名湯</span><div class="s-title">入住安比高原 ANA 渡假飯店 / 八幡平溫泉 ＆ 晚宴百匯盛宴</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=ANA+Crowne+Plaza+Resort+Appi+Kogen" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">享用飯店內豐盛日式會席或豪華自助餐。換上日式浴衣浸泡「白樺之湯」露天風呂，仰望滿天繁星洗去疲憊。</div>
+          </div>
+        </div>
+      </div>
+      <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div id="day-3" style="scroll-margin-top: 80px;">
+      <div class="banner">
+        <div class="b-icon">🚠</div>
+        <div class="b-title">
+          <h3>Day 3 ｜ 11/25 (週三) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">🍂 青森山區 0°C ~ 8°C</span></h3>
+          <h2>十和田湖展望台 ➔ 奧入瀨溪流世界第一美溪 ➔ 蔦沼紅葉秘境 ➔ 八甲山空中纜車</h2>
+          <p>♨️ 南田蘋果溫泉 HOTEL APPLE LAND / 弘前溫泉</p>
+        </div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>俯瞰深藍十和田湖，漫步奧入瀨溪銚子大瀑布奇岩名水；造訪如烈火般倒映的蔦沼；搭乘八甲田空中纜車俯瞰整座山巒斑斕楓紅！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>山頂風大體感溫度接近零度，請務必攜帶防風保暖外套、手套、毛帽！大行李隨車移動。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/26) 造訪江戶名城弘前城，在津輕藩睡魔村欣賞巨型祭典燈籠，並前往蘋果公園親手採摘青森蜜蘋果！</div></div>
+      </div>
+      <div class="v-timeline">
+        <div class="v-line"></div>
+        <div class="t-entry">
+          <div class="t-time">08:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🌊 雙重火口</span><div class="s-title">【十和田湖展望台】日本第三深葫蘆形神秘深藍火山湖</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Towada" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">海拔 400 米的火口湖，水深達 327 米！湖水清澈深藍如寶石，登展望台俯瞰整座湖泊與周圍群山秋色相映成趣。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">10:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🍁 世界名溪</span><div class="s-title">【奧入瀨溪流】長達 14 公里青苔奇岩・銚子大瀑布精華散策</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Oirase+Gorge" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">日本國家特別名勝！沿著清澈溪谷漫步，參觀寬 20 米、落差 7 米的「銚子大瀑布」，溪流白絹奔流、激起水霧，遍布青苔的奇岩被楓紅緊緊包圍。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">12:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k food">🍲 鄉土風味</span><div class="s-title">午餐：東北鄉土料理或日式特色御膳料理</div></div>
+            <div class="s-desc">在溪谷周邊享用暖胃日式小火鍋、烤魚與山菜料理。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">13:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🔥 紅葉秘境</span><div class="s-title">【蔦沼】青森絕美秘境・大自然調色盤倒影</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tsuta+Numa" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">被原始山毛櫸林環繞的蔦之七沼之首！湖水平靜如明鏡，四周群山紅葉倒映水面，呈現大自然最極致的絢爛色彩。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">15:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🚠 空中巡禮</span><div class="s-title">【八甲田山纜車】(含往返乘車券) 俯瞰整座連綿壯麗紅葉山脈</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Hakkoda+Ropeway" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">搭乘大型纜車約 10 分鐘直抵八甲田山頂公園站！居高臨下 360 度鳥瞰整片山谷斑斕秋葉，遠眺青森市區與陸奧灣！</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 50 分鐘前往津輕平原南田溫泉</div></div>
+        <div class="t-entry">
+          <div class="t-time">17:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k hotel">♨️ 蘋果溫泉</span><div class="s-title">入住南田溫泉 HOTEL APPLE LAND (蘋果足湯 ＆ 鮮甜蘋果池泡湯)</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Minamida+Onsen+Hotel+Apple+Land" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">全日本獨一無二的「蘋果風呂」！水面漂浮滿池新鮮紅蘋果，散發迷人果香；晚宴享用津輕旬彩和食御膳。</div>
+          </div>
+        </div>
+      </div>
+      <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div id="day-4" style="scroll-margin-top: 80px;">
+      <div class="banner">
+        <div class="b-icon">🍎</div>
+        <div class="b-title">
+          <h3>Day 4 ｜ 11/26 (週四) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">⛅ 青森/秋田 4°C ~ 12°C</span></h3>
+          <h2>弘前城天守閣 ➔ 津輕藩睡魔村巨型燈籠工藝 ➔ 弘前蘋果公園採果體驗</h2>
+          <p>♨️ 田澤湖渡假村 / 盛岡森之風 / 紫苑溫泉</p>
+        </div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>登日本百大名城弘前城，在睡魔村觀摩震撼的祭典大扇燈與傳統樂器演奏；親身走入果園摘採世界聞名的青森蜜蘋果！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>採果時請穿著平底防滑球鞋，採下的香甜蘋果可當場品嚐或外帶享用！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/27) 前往琉璃深藍田澤湖，搭乘秋田內陸縱貫鐵道，走訪陸奧小京都角館，傍晚前進神隱少女銀山溫泉！</div></div>
+      </div>
+      <div class="v-timeline">
+        <div class="v-line"></div>
+        <div class="t-entry">
+          <div class="t-time">08:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🏯 百大名城</span><div class="s-title">【弘前城】(鷹岡城) 津輕藩主江戶現存天守閣・國家指定史蹟</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Hirosaki+Castle" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">西元 1611 年築城，東北唯一現存天守閣！城郭護城河旁松林古木蒼翠，登上本丸俯瞰岩木山雄偉身姿。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">10:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🏮 傳統祭典</span><div class="s-title">【津輕藩睡魔村】展出壯麗巨型睡魔燈籠・津輕三味線與民俗工藝</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tsugaru-han+Neputa+Village" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">重現登錄無形民俗文化遺產的睡魔祭現場！展出高達數公尺的大型扇形彩繪燈籠，親身體驗太鼓打擊與工藝製作。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">11:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k food">🥢 鄉土旬味</span><div class="s-title">午餐：日式特色鄉土定食料理</div></div>
+            <div class="s-desc">品嚐津輕傳統貝燒味噌、鮮脆時蔬與熱呼呼的烏龍麵定食。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">13:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🍎 採果體驗</span><div class="s-title">【弘前蘋果公園】果園現採鮮甜青森蜜蘋果體驗</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Hirosaki+Apple+Park" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">青森為日本第一蘋果王國！親手摘採枝頭成熟飽滿的蜜蘋果，咬下瞬間汁多脆甜、果香四溢！（每人採果體驗）</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車南下穿越山林約 2 小時前往秋田田澤湖</div></div>
+        <div class="t-entry">
+          <div class="t-time">17:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k hotel">♨️ 湖畔名湯</span><div class="s-title">入住田澤湖 LAKE RESORT / 森之風 / 紫苑溫泉</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tazawako+Lake+Resort" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">入住秋田特色溫泉渡假飯店，享用飯店日式會席料理或百匯大餐，浸泡滑潤溫泉大浴場舒緩筋骨。</div>
+          </div>
+        </div>
+      </div>
+      <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div id="day-5" style="scroll-margin-top: 80px;">
+      <div class="banner">
+        <div class="b-icon">🏯</div>
+        <div class="b-title">
+          <h3>Day 5 ｜ 11/27 (週五) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">❄️ 秋田/山形 2°C ~ 10°C</span></h3>
+          <h2>田澤湖辰子像 ➔ 秋田內陸橫貫鐵道 ➔ 陸奧小京都角館 ➔ 大正浪漫銀山溫泉街</h2>
+          <p>♨️ 天童溫泉 瀧之湯 (或王將/榮屋) / 鳴子溫泉</p>
+        </div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>朝聖琉璃寶藍田澤湖金身辰子像；搭乘秋田內陸縱貫鐵道穿梭深山田園；漫步角館武家屋敷黑色板牆；傍晚漫步神隱少女銀山溫泉瓦斯燈街景！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>銀山溫泉街需搭接駁車前往且遊客眾多，請隨身攜帶隨身包包，大行李留在車上即可。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/28) 最後一天！搭乘松島遊船欣賞日本三景，親手體驗烤魚板 DIY，三井 Outlet 購物後直飛返台！</div></div>
+      </div>
+      <div class="v-timeline">
+        <div class="v-line"></div>
+        <div class="t-entry">
+          <div class="t-time">08:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">💧 日本最深</span><div class="s-title">【田澤湖】日本最深琉璃湖泊 ＆ 金色【辰子像】傳說</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Tazawa" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">水深 423 米全日第一！湖面在陽光下映出夢幻「田澤藍」。湖畔佇立著祈求永保青春化為巨龍的金黃辰子雕像，也是台灣澄清湖姐妹湖。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">09:40</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k train">🚃 微笑鐵道</span><div class="s-title">【秋田內陸縱貫鐵道】搭乘景觀火車 (松葉站 ➔ 角館站)</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Matsuba+Station" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">被鐵道迷譽為「微笑鐵道」！列車穿梭在純樸無垢的山林、深邃鐵橋與溪谷田園間，車窗外美景如一幅幅流動的畫卷。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">10:45</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">⚔️ 小京都</span><div class="s-title">【角館武家屋敷】陸奧小京都・江戶初期武士宅邸街道群</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Kakunodate+Samurai+District" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">日本國家重要傳統建造物保存區！黑色厚實木板牆、莊嚴武士宅邸林立，青柳家與石黑家完整展示古代武士佩劍、盔甲與歷史文物。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">12:15</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k food">🍲 名物米棒</span><div class="s-title">午餐：秋田名物米棒鍋 (Kiritanpo) 套餐或和風料理</div></div>
+            <div class="s-desc">將米飯裹在木棒上炙烤後切段，加入比內地雞、牛蒡與大蔥熬煮的鮮甜高湯，秋田第一名道地鍋物！</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 2 小時前往山形縣尾花澤市</div></div>
+        <div class="t-entry">
+          <div class="t-time">15:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🏮 大正浪漫</span><div class="s-title">【銀山溫泉街】走進宮崎駿《神隱少女》・大正時代木造溫泉旅館群</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Ginzan+Onsen" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">原為銀礦採掘地，後轉型為仙境溫泉鄉！銀山川兩側保存著完好的三四層木造洋風閣樓，傍晚黃昏煤氣瓦斯燈點亮，如夢似幻的大正風情！</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 50 分鐘前往天童溫泉鄉</div></div>
+        <div class="t-entry">
+          <div class="t-time">18:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k hotel">♨️ 將棋名湯</span><div class="s-title">入住天童溫泉 瀧之湯 (或王將/榮屋) ＆ 享用精緻山形會席晚宴</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tendo+Onsen+Takinoyu" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">將棋產量全日第一的天童溫泉！享受寬敞的檜木風呂與庭園露天風呂，品嚐頂級山形牛肉與會席料理。</div>
+          </div>
+        </div>
+      </div>
+      <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div id="day-6" style="scroll-margin-top: 80px;">
+      <div class="banner">
+        <div class="b-icon">🛥️</div>
+        <div class="b-title">
+          <h3>Day 6 ｜ 11/28 (週六) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">☀️ 仙台 8°C ~ 15°C</span></h3>
+          <h2>日本三景松島遊船 ➔ 松島五大堂 ➔ 烤魚板 DIY ➔ 三井 Outlet 仙台港 ➔ 高雄小港</h2>
+          <p>平安回到溫暖可愛的家</p>
+        </div>
+      </div>
+      <div class="strat-card">
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>乘遊船巡禮日本三景松島灣兩百座翠綠松島；參觀桃山建築五大堂；親手現烤香脆魚板；在三井 Outlet 盡情採買戰利品，直飛返高雄！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>早晨退房將大行李打包整齊上車，Outlet 與機場採買的液體名產記得放入託運，隨身帶好護照正本！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>晚間 22:10 平安降落高雄小港國際機場，帶著滿滿東北楓紅與名湯溫暖回憶圓滿賦歸！</div></div>
+      </div>
+      <div class="v-timeline">
+        <div class="v-line"></div>
+        <div class="t-entry">
+          <div class="t-time">08:45</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🌊 日本三景</span><div class="s-title">【松島灣遊船】(含乘船券) 巡遊日本三景・兩百餘座青松奇岩群島</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Matsushima+Bay" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">與京都天橋立、廣島宮島並列「日本三景」！乘遊船自海上優雅視角遠眺仁王島、鐘島等覆蓋著松樹的奇岩絕景。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">10:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">⛩️ 桃山國寶</span><div class="s-title">【松島五大堂】東北最古老桃山建築 ＆ 紅色結緣「透橋」</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Godaido+Temple" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">伊達政宗於 1604 年重建的代表建築，矗立在海中島嶼上，通過橋面鏤空的紅色「透橋」，低頭可見碧綠海水，風景極美。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">11:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k food">🍢 現烤體驗</span><div class="s-title">【烤魚板 (笹かまぼこ) DIY 體驗】親手炭烤仙台必吃名產</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Matsushima+Kamaboko" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">親手將竹葉形魚板放在紅外線烤架上慢慢烘烤，待表皮膨脹金黃酥脆即可趁熱咬下，鮮香彈牙好玩又美味！</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">12:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k food">🥢 松島午宴</span><div class="s-title">午餐：松島特色和風料理或牡蠣御膳</div></div>
+            <div class="s-desc">品嚐宮城縣新鮮海產、炸牡蠣與精緻日式釜飯。</div>
+          </div>
+        </div>
+        <div class="t-entry">
+          <div class="t-time">13:30</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k spot">🛍️ 血拼採買</span><div class="s-title">【免稅店】＆【三井 OUTLET PARK 仙台港】最後大採購！</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Mitsui+Outlet+Park+Sendai+Port" target="_blank">📍 Google Maps 導航</a></div>
+            <div class="s-desc">東北規模最大 Outlet！擁有 120 家國際知名品牌、日系服飾、運動用品與廚具，享退稅優惠採買最後戰利品！</div>
+          </div>
+        </div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 25 分鐘前往仙台空港辦理登機與行李托運</div></div>
+        <div class="t-entry">
+          <div class="t-time">19:00</div>
+          <div class="t-node"></div>
+          <div class="s-box">
+            <div class="s-header"><span class="badge-k flight">🛫 虎航凱旋</span><div class="s-title">仙台空港 (SDJ) ➔ 高雄小港 (KHH) 台灣虎航 IT 773</div></div>
+            <div class="s-desc">搭乘台灣虎航晚班機直飛返台（飛行時間約 4h 10m），機上享用精緻餐食，於 22:10 平安返抵高雄小港機場，圓滿返家！</div>
+          </div>
+        </div>
+      </div>
+      <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+    </div>
+  </section>
+
+  <!-- ==================== 2. 航班 ==================== -->
+  <section id="sec-flights" style="scroll-margin-top: 80px;">
+    <div class="card" style="border-left: 6px solid var(--sky);">
+      <h3>✈️ 台灣虎航 (Tigerair Taiwan) 高雄直飛仙台航線</h3>
+      <p>
+        • <strong>去程【IT 772 直飛】：</strong>2026/11/23 (一) 13:25 高雄小港 (KHH) ➔ 18:10 仙台空港 (SDJ)（飛行時間約 3h 45m）<br>
+        • <strong>回程【IT 773 直飛】：</strong>2026/11/28 (六) 19:00 仙台空港 (SDJ) ➔ 22:10 高雄小港 (KHH)（晚班機直飛返國，第 6 天玩足整日！）
+      </p>
+      <div class="tip-box tip-green">🌟 <strong>南台灣專屬直飛：</strong>免北上奔波，小港直飛仙台！回程晚班機直飛回台，把握 Outlet 與松島採買時光！</div>
+    </div>
+    <div class="card">
+      <h3>🧳 團體機票行李額度規定</h3>
+      <p>
+        • <strong>免費託運行李：</strong>每位旅客享有 <strong>20 kg 託運行李</strong>（單件託運）。<br>
+        • <strong>手提隨身行李：</strong>每位旅客限帶 1 件手提行李 ＋ 1 件個人隨身物品，合計 <strong>不超過 10 kg</strong>。<br>
+        • <strong>關鍵安檢提醒：</strong>日本海關嚴格管制，行動電源、鋰電池請隨身攜帶；肉製品、未加工蔬果嚴禁攜帶入境日本或帶回台灣！
+      </p>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+
+  <!-- ==================== 3. 總覽 ==================== -->
+  <section id="sec-overview" style="scroll-margin-top: 80px;">
+    <div class="card" style="border-left: 6px solid var(--forest);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+        <h3 style="margin-bottom:0;">🗺️ 日本東北秋楓 6 日經典全景路線</h3>
+        <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">嚴選三大名湯・四大名溪・世界遺產</span>
+      </div>
+      <p style="margin:8px 0 14px; font-size:0.86rem; color:var(--muted);">
+        從仙台出發，環遊宮城、岩手、青森、秋田、山形五縣！搭乘八甲山紅葉纜車、秋田內陸縱貫鐵道，走訪神隱少女銀山溫泉與日本三景松島：
+      </p>
+      <div style="background:#fdfaf4; border:2px solid var(--border); border-radius:16px; padding:16px; box-shadow:2px 2px 0px var(--border);">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">✈️</div>
+          <div style="flex:1;">
+            <strong>1. 高雄小港 ➔ 仙台空港 ➔ 仙台市區飯店</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">虎航直飛 ➔ 機上精緻餐食 ➔ 抵達東北第一大城仙台 ➔ 入住市區飯店休息</div>
+          </div>
+        </div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 專車前進岩手縣名勝與世界文化遺產</div>
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🚣</div>
+          <div style="flex:1;">
+            <strong>2. 嚴美溪飛天糰子 ＆ 猊鼻溪遊船 ＆ 世界遺產中尊寺金色堂</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">日本第一美溪 ➔ 船夫清唱猊鼻溪木舟 ➔ 平泉金色淨土 ➔ ♨️ 安比/八幡平高原溫泉</div>
+          </div>
+        </div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 越過縣界，深入青森絕美紅葉雙璧</div>
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🚠</div>
+          <div style="flex:1;">
+            <strong>3. 十和田湖展望台 ＆ 奧入瀨溪流 ＆ 蔦沼朝燒 ＆ 八甲山纜車</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">銚子大瀑布奇岩名水 ➔ 紅葉倒影秘境蔦沼 ➔ 八甲田空中纜車俯瞰滿山斑斕 ➔ ♨️ 南田蘋果溫泉</div>
+          </div>
+        </div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 探訪日本百大名城與傳統民俗體驗</div>
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🍎</div>
+          <div style="flex:1;">
+            <strong>4. 弘前城 ＆ 津輕藩睡魔村 ＆ 弘前蘋果公園採果樂</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">江戶名城鷹岡城 ➔ 巨大睡魔燈籠工藝 ➔ 親採青森香甜蜜蘋果 ➔ ♨️ 田澤湖/紫苑溫泉</div>
+          </div>
+        </div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚃 乘坐復古秋田內陸鐵道，穿梭陸奧小京都</div>
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🏯</div>
+          <div style="flex:1;">
+            <strong>5. 田澤湖辰子像 ＆ 秋田內陸橫貫鐵道 ＆ 角館武家屋敷 ＆ 銀山溫泉街</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">日本最深琉璃湖泊 ➔ 微笑鐵道景觀列車 ➔ 黑色武士宅邸 ➔ 大正浪漫神隱少女瓦斯燈街景 ➔ ♨️ 天童名湯</div>
+          </div>
+        </div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🛥️ 日本三景海灣巡航與三井 Outlet 購物</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🛫</div>
+          <div>
+            <strong>6. 日本三景松島遊船 ＆ 五大堂 ＆ 烤魚板DIY ➔ 三井Outlet ➔ 高雄小港</strong><br>
+            <span style="font-size:0.82rem; color:var(--muted);">仙台港血拼採買，19:00 虎航直飛，22:10 滿載戰利品平安凱旋歸國</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+
+  <!-- ==================== 4. 菜單匯率 ==================== -->
+  <section id="sec-menu" style="scroll-margin-top: 80px;">
+    <div class="card" style="border-left: 6px solid var(--calcifer);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+        <h3 style="margin-bottom:0;">💴 日幣 (JPY) 即時換算新台幣 (TWD) 計算機</h3>
+        <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">匯率 1 JPY ≈ 0.22 TWD</span>
+      </div>
+      <p style="margin:6px 0 10px; font-size:0.86rem; color:var(--muted);">在日本溫泉街或商店街買特產伴手禮，輸入日幣含稅金額（例如 3500）：</p>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <input type="number" id="jpy-in" class="input-box" placeholder="輸入日幣金額 (例: 3500)" oninput="calcJpy()" />
+        <span style="font-size:1.1rem; font-weight:900;">¥ JPY</span>
+      </div>
+      <div style="margin-top:12px; padding:12px; background:var(--hay-bg); border:2px solid var(--border); border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div style="font-size:0.78rem; font-weight:800; color:var(--muted);">折合新台幣約</div>
+          <div style="font-size:0.75rem; color:#8c7e6e;" id="jpy-calc-note">輸入金額即刻計算</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:1.4rem; font-weight:900; color:var(--calcifer);" id="twd-out">NT$ 0</div>
+          <div style="font-size:0.78rem; font-weight:800; color:var(--forest);" id="twd-hint">心算秘訣：日幣金額除以 4.5 (或乘 0.22)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>🍱 東北經典老饕名產對照庫</h3>
+      <div id="menu-items">
+        <div style="font-size:0.92rem; font-weight:900; color:var(--forest); margin:12px 0 6px;">🥩 宮城仙台名物 (牛舌與魚板)</div>
+        <div class="m-item" onclick="quickFill('牛たん定食 (極厚切牛舌定食)', '炭烤牛舌＋麥飯＋牛尾湯', 2500)">
+          <div><strong>牛たん定食 (極厚切牛舌定食)</strong> <span style="font-size:0.82rem; color:var(--muted);">炭烤牛舌＋麥飯＋牛尾湯</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">¥2,500 (約 NT$550)</span> <button class="audio-btn" onclick="event.stopPropagation(); speakJp('牛たん定食')">🔊</button></div>
+        </div>
+        <div class="m-item" onclick="quickFill('ずんだ餅 (毛豆泥麻糬)', '仙台百年招牌甜點', 650)">
+          <div><strong>ずんだ餅 (毛豆泥麻糬)</strong> <span style="font-size:0.82rem; color:var(--muted);">仙台百年招牌甜點</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">¥650 (約 NT$143)</span> <button class="audio-btn" onclick="event.stopPropagation(); speakJp('ずんだ餅')">🔊</button></div>
+        </div>
+        <div class="m-item" onclick="quickFill('笹かまぼこ (手烤竹葉魚板)', '炭烤現吃香酥魚板', 300)">
+          <div><strong>笹かまぼこ (手烤竹葉魚板)</strong> <span style="font-size:0.82rem; color:var(--muted);">炭烤現吃香酥魚板</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">¥300 (約 NT$66)</span> <button class="audio-btn" onclick="event.stopPropagation(); speakJp('笹かまぼこ')">🔊</button></div>
+        </div>
+        <div style="font-size:0.92rem; font-weight:900; color:var(--forest); margin:12px 0 6px;">🍎 青森與秋田名物</div>
+        <div class="m-item" onclick="quickFill('青森りんごパイ (現烤蘋果派)', '整顆青森蜜蘋果內餡', 550)">
+          <div><strong>青森りんごパイ (現烤蘋果派)</strong> <span style="font-size:0.82rem; color:var(--muted);">整顆青森蜜蘋果內餡</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">¥550 (約 NT$121)</span> <button class="audio-btn" onclick="event.stopPropagation(); speakJp('アップルパイ')">🔊</button></div>
+        </div>
+        <div class="m-item" onclick="quickFill('きりたんぽ鍋 (秋田米棒鍋定食)', '比內地雞鮮甜雞湯火鍋', 1800)">
+          <div><strong>きりたんぽ鍋 (秋田米棒鍋定食)</strong> <span style="font-size:0.82rem; color:var(--muted);">比內地雞鮮甜雞湯火鍋</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">¥1,800 (約 NT$396)</span> <button class="audio-btn" onclick="event.stopPropagation(); speakJp('きりたんぽ鍋')">🔊</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+
+  <!-- ==================== 5. 語句卡 ==================== -->
+  <section id="sec-cards" style="scroll-margin-top: 80px;">
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+        <h3 style="margin-bottom:0;">🗣️ 實用日本旅遊生活會話卡</h3>
+        <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">日本語</span>
+      </div>
+      <p style="font-size:0.86rem; color:var(--muted); margin-bottom:12px;">點一下會放大成全螢幕大字卡，可直接拿給店員、司機或飯店人員看：</p>
+      <div class="p-list" id="card-list">
+        <div class="p-card" onclick="openMDirect('こんにちは', '你好 (白天問候)', '空尼基挖')">
+          <div class="p-cn">你好 (白天問候)</div>
+          <div class="p-it">こんにちは</div>
+        </div>
+        <div class="p-card" onclick="openMDirect('ありがとうございます', '謝謝你', '阿里嘎多 狗雜衣媽絲')">
+          <div class="p-cn">謝謝你</div>
+          <div class="p-it">ありがとうございます</div>
+        </div>
+        <div class="p-card" onclick="openMDirect('すみません', '不好意思 / 請問', '絲咪瑪現')">
+          <div class="p-cn">不好意思 / 請問</div>
+          <div class="p-it">すみません</div>
+        </div>
+        <div class="p-card" onclick="openMDirect('これをお願いします', '請給我這個', '口壘 喔 歐內嘎一洗媽絲')">
+          <div class="p-cn">請給我這個</div>
+          <div class="p-it">これをお願いします</div>
+        </div>
+        <div class="p-card" onclick="openMDirect('お会計をお願いします', '買單 / 結帳', '歐開給 喔 歐內嘎一洗媽絲')">
+          <div class="p-cn">買單 / 結帳</div>
+          <div class="p-it">お会計をお願いします</div>
+        </div>
+        <div class="p-card" onclick="openMDirect('免税できますか？', '可以辦理免稅嗎？', '面傑 爹ki媽絲卡？')">
+          <div class="p-cn">可以辦理免稅嗎？</div>
+          <div class="p-it">免税できますか？</div>
+        </div>
+        <div class="p-card" onclick="openMDirect('トイレはどこですか？', '請問洗手間在哪裡？', '透以壘 挖 都口爹絲卡？')">
+          <div class="p-cn">請問洗手間在哪裡？</div>
+          <div class="p-it">トイレはどこですか？</div>
+        </div>
+      </div>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+
+  <!-- ==================== 6. 費用明細 ==================== -->
+  <section id="sec-pricing" style="scroll-margin-top: 80px;">
+    <div class="card" style="border-left: 6px solid var(--forest);">
+      <h3>💰 團費售價與報價說明</h3>
+      <p>
+        • <strong>售價：</strong><strong style="color:var(--calcifer); font-size:1.2rem;">NT$ 50,800 元 / 人</strong><br>
+        • <strong>孩童不佔床：</strong>NT$ 45,800 元 / 人（未滿 6 歲）<br>
+        • <strong>小費規定：</strong>司機、導遊、領隊服務小費 <strong>NT$ 300 / 人 / 天 × 6 天 = NT$ 1,800 元</strong>（現場支付）。
+      </p>
+      <div class="tip-box tip-green">🛡️ <strong>包含全套體驗門票：</strong>八甲田山高空纜車、秋田內陸縱貫鐵道、中尊寺金色堂門票、猊鼻溪遊船、松島遊船、弘前採蘋果體驗、烤魚板 DIY，全無自費陷阱！</div>
+    </div>
+    <div class="card">
+      <h3>📦 費用包含項目說明</h3>
+      <p>
+        1. <strong>來回機票：</strong>台灣虎航高雄小港 ⇄ 仙台空港來回經濟艙機票（含 20kg 託運 ＋ 10kg 隨身行李）。<br>
+        2. <strong>全程住宿：</strong>仙台市區優質飯店 2 晚 ＋ <strong>頂級名湯溫泉飯店 3 晚</strong>（兩人一室，享有露天風呂大浴場）。<br>
+        3. <strong>豐盛餐食：</strong>早餐 × 5、午餐 × 4、晚餐 × 4（包含溫泉會席料理、飯店豐盛百匯、秋田米棒鍋、鹽烤香魚定食）。<br>
+        4. <strong>高額責任險：</strong>含 250 萬旅行業責任保險 ＋ 20 萬意外醫療險。<br>
+        5. <strong>特色體驗全包：</strong>八甲山纜車票、秋田鐵道車票、中尊寺金色堂拜觀料、猊鼻溪與松島雙遊船船票、採果入園費。
+      </p>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+
+  <!-- ==================== 7. 溫泉住宿 ==================== -->
+  <section id="sec-hotels" style="scroll-margin-top: 80px;">
+    <div class="card" style="border-left: 6px solid #6b21a8;">
+      <h3>♨️ 精選三晚頂級東北溫泉名宿</h3>
+      <p>
+        • <strong>溫泉第 1 晚 (Day 2)：安比高原 ANA 渡假飯店 / 八幡平溫泉</strong><br>
+        &nbsp;&nbsp;坐落於十和田八幡平國立公園旁，享有白樺之湯露天風呂，在澄澈的高原星空下洗滌身心。<br>
+        • <strong>溫泉第 2 晚 (Day 3)：南田溫泉 HOTEL APPLE LAND / 弘前溫泉</strong><br>
+        &nbsp;&nbsp;津輕平原獨創的「蘋果溫泉」！露天風呂水面上漂浮著滿池鮮甜青森紅蘋果，散發清甜果香，美肌效果極佳！<br>
+        • <strong>溫泉第 3 晚 (Day 5)：天童溫泉 瀧之湯 (或王將/榮屋) / 鳴子溫泉</strong><br>
+        &nbsp;&nbsp;將棋之鄉天童溫泉，擁有百年歷史與大浴場，晚宴品嚐精緻山形鄉土旬彩會席料理。
+      </p>
+    </div>
+    <div class="card">
+      <h3>🏨 仙台市區飯店配置</h3>
+      <p>
+        • <strong>第 1 晚 ＆ 第 4 晚：</strong>KOKO HOTEL / ROUTE INN / DORMY INN / 京阪 / 紫苑 / 田澤湖渡假村等同級市區飯店，周邊交通便捷，鄰近商店街與便利商店。
+      </p>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+
+  <!-- ==================== 8. 準備 ==================== -->
+  <section id="sec-tips" style="scroll-margin-top: 80px;">
+    <div class="card">
+      <h3>💡 日本東北深秋行前準備須知</h3>
+      <p>
+        • <strong>氣候與洋蔥式穿著：</strong>11 月底東北山區（八甲山、奧入瀨溪、銀山溫泉）氣溫約在 0°C ~ 10°C 之間，清晨與夜晚接近冰點甚至可能初雪！必備羽絨厚外套、發熱衣、圍巾、毛帽與好走防滑健行球鞋。<br>
+        • <strong>電壓與插座：</strong>日本電壓為 100V、雙扁孔插座，台灣一般手機、相機充電器（100-240V 通用）皆可直接插用，無需轉接頭。<br>
+        • <strong>銀山溫泉街管制提醒：</strong>銀山溫泉近年為保護古蹟施行接駁車管制，沿河川木造街區步行拍照請依領隊指揮，注意腳下木橋濕滑。<br>
+        • <strong>泡湯禮儀：</strong>進入浴場前請先在淋浴區將身體清洗乾淨；毛巾不可浸入溫泉池中；有大面積刺青者需遵守各浴場之掩飾規定。
+      </p>
+    </div>
+    <div class="back-btn"><a href="#top">▲ 回到頂部</a></div>
+  </section>
+</div>
+
+<!-- 全螢幕大字卡彈窗 -->
+<div id="modal" class="modal" onclick="closeM()">
+  <div class="m-box" onclick="event.stopPropagation()">
+    <div style="font-size:0.82rem; font-weight:800; color:var(--muted); margin-bottom:10px;">🗣️ 日本旅行會話卡</div>
+    <div class="m-it" id="m-it">すみません</div>
+    <div class="m-cn" id="m-cn">不好意思 / 請問</div>
+    <div class="m-pronun" id="m-pro">發音提示：絲咪瑪現</div>
+    <div class="m-actions">
+      <button class="m-btn" style="background:var(--hay); color:#fff;" onclick="speakM()">🔊 語音朗讀</button>
+      <button class="m-btn" style="background:#fff;" onclick="closeM()">關閉 ✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let curModalText = '';
+  function openMDirect(jp, cn, pro) {
+    curModalText = jp;
+    document.getElementById('m-it').innerText = jp;
+    document.getElementById('m-cn').innerText = cn;
+    document.getElementById('m-pro').innerText = '發音提示：' + pro;
+    document.getElementById('modal').style.display = 'flex';
+  }
+  function closeM() { document.getElementById('modal').style.display = 'none'; }
+  function speakM() { if (curModalText) speakJp(curModalText); }
+
+  function calcJpy() {
+    const jpy = parseFloat(document.getElementById('jpy-in').value) || 0;
+    const twd = Math.round(jpy * 0.22);
+    document.getElementById('twd-out').innerText = 'NT$ ' + twd.toLocaleString();
+    if (jpy > 0) {
+      document.getElementById('jpy-calc-note').innerText = '¥' + jpy.toLocaleString() + ' × 0.22 匯率換算';
+    } else {
+      document.getElementById('jpy-calc-note').innerText = '輸入金額即刻計算';
+    }
+  }
+
+  function quickFill(it, cn, price) {
+    document.getElementById('jpy-in').value = price;
+    calcJpy();
+    curModalText = it.split('(')[0];
+    document.getElementById('m-it').innerText = it;
+    document.getElementById('m-cn').innerText = cn;
+    document.getElementById('m-pro').innerText = '價格：約 ¥' + price.toLocaleString() + ' (約 NT$' + Math.round(price * 0.22) + ')';
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function speakJp(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'ja-JP'; u.rate = 0.85;
+      window.speechSynthesis.speak(u);
+    } else {
+      alert('您的瀏覽器不支援語音合成功能。');
+    }
+  }
+</script>
+</body>
+</html>
