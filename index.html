@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>仙台東北賞楓・奧入瀨溪ｘ八甲山纜車三晚溫泉 6 日手帳</title>
+  <title>仙台【東北賞楓】採果體驗【奧入瀨溪×八甲山紅葉纜車】溫泉6日手帳</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -60,7 +60,6 @@
     #tab-over:checked ~ .wrap .nav label[for="tab-over"],
     #tab-menu:checked ~ .wrap .nav label[for="tab-menu"],
     #tab-cards:checked ~ .wrap .nav label[for="tab-cards"],
-    #tab-price:checked ~ .wrap .nav label[for="tab-price"],
     #tab-hotel:checked ~ .wrap .nav label[for="tab-hotel"],
     #tab-tips:checked ~ .wrap .nav label[for="tab-tips"] {
       background: var(--calcifer); color: #fff; box-shadow: 1.5px 1.5px 0px var(--border);
@@ -73,7 +72,6 @@
     #tab-over:checked ~ .wrap #sec-overview { display: block; }
     #tab-menu:checked ~ .wrap #sec-menu { display: block; }
     #tab-cards:checked ~ .wrap #sec-cards { display: block; }
-    #tab-price:checked ~ .wrap #sec-pricing { display: block; }
     #tab-hotel:checked ~ .wrap #sec-hotels { display: block; }
     #tab-tips:checked ~ .wrap #sec-tips { display: block; }
 
@@ -159,6 +157,9 @@
     .card p { font-size: 0.9rem; color: #403b35; line-height: 1.7; }
     .tip-box { padding: 9px 12px; border-radius: 10px; font-size: 0.84rem; line-height: 1.6; border: 1.5px solid var(--border); margin-top: 8px; }
     .tip-green { background: #eaf3ec; color: #1c4826; }
+    .tip-red { background: #faeae6; color: #8f2314; border-color: #8f2314; }
+    .tip-blue { background: #e9f2f8; color: #1e4562; }
+    .tip-gold { background: #fbf3e2; color: #724c08; }
 
     .banner {
       background: var(--forest-bg); border: 2.5px solid var(--border); border-radius: 20px;
@@ -200,6 +201,7 @@
     .p-card { background: #fff; border: 2px solid var(--border); border-radius: 14px; padding: 12px 14px; box-shadow: 2px 2px 0px var(--border); }
     .p-cn { font-size: 0.78rem; color: #796f63; font-weight: 700; }
     .p-it { font-size: 1.15rem; font-weight: 900; }
+    .input-box { width: 100%; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--border); font-size: 1.1rem; font-weight: 900; background: #fcf9f2; outline: none; }
   </style>
 </head>
 <body>
@@ -210,7 +212,6 @@
   <input type="radio" name="main_tab" id="tab-over" class="pure-radio">
   <input type="radio" name="main_tab" id="tab-menu" class="pure-radio">
   <input type="radio" name="main_tab" id="tab-cards" class="pure-radio">
-  <input type="radio" name="main_tab" id="tab-price" class="pure-radio">
   <input type="radio" name="main_tab" id="tab-hotel" class="pure-radio">
   <input type="radio" name="main_tab" id="tab-tips" class="pure-radio">
 
@@ -224,38 +225,71 @@
 
 <div class="wrap">
   <div class="top-badge">
-    <span>🍁 仙台東北賞楓・奧入瀨溪ｘ八甲山纜車三晚溫泉 6 日手帳 ｜ 2026.11.23 - 2026.11.28</span>
+    <span>🍁 仙台【東北賞楓】採果體驗【奧入瀨溪×八甲山紅葉纜車】溫泉6日 ｜ 2026.11.23 - 2026.11.28</span>
   </div>
 
   <!-- 頂部導覽按鈕標籤 -->
   <div class="nav">
-    <label for="tab-flight" class="nav-label">✈️ 航班</label>
+    <label for="tab-flight" class="nav-label">✈️ 航班集合</label>
     <label for="tab-over" class="nav-label">🗺️ 總覽</label>
-    <label for="tab-sched" class="nav-label">📅 行程</label>
+    <label for="tab-sched" class="nav-label">📅 每日行程</label>
     <label for="tab-menu" class="nav-label">🍽️ 菜單匯率</label>
     <label for="tab-cards" class="nav-label">🗣️ 語句卡</label>
-    <label for="tab-price" class="nav-label">💰 費用明細</label>
-    <label for="tab-hotel" class="nav-label">♨️ 溫泉住宿</label>
-    <label for="tab-tips" class="nav-label">💡 準備</label>
+    <label for="tab-hotel" class="nav-label">♨️ 住宿飯店</label>
+    <label for="tab-tips" class="nav-label">💡 旅遊須知</label>
   </div>
 
-  <!-- ==================== 1. 航班分頁 ==================== -->
+  <!-- ==================== 1. 航班與集合資訊分頁 ==================== -->
   <div id="sec-flights" class="main-sec">
-    <div class="card" style="border-left: 6px solid var(--sky);">
-      <h3>✈️ 台灣虎航 (Tigerair Taiwan) 高雄直飛仙台航線</h3>
+    <div class="card" style="border-left: 6px solid var(--calcifer);">
+      <h3>📢 集合資訊與領隊聯絡方式 (團號：SDJ06IT26N23K01)</h3>
       <p>
-        • <strong>去程【IT 772 直飛】：</strong>2026/11/23 (一) 13:25 高雄小港 (KHH) ➔ 18:10 仙台空港 (SDJ)（飛行時間約 3h 45m）<br>
-        • <strong>回程【IT 773 直飛】：</strong>2026/11/28 (六) 19:00 仙台空港 (SDJ) ➔ 22:10 高雄小港 (KHH)（晚班機直飛返國，第 6 天玩足整日！）
+        • <strong>集合時間：</strong><strong style="color:var(--calcifer);">2026/11/23 (一) 10:55</strong>（台灣時間 24 小時制）<br>
+        • <strong>集合地點：</strong><strong>高雄小港機場國際航站 3 樓 台灣虎航航空公司櫃台</strong><br>
+        • <strong>領隊 / 送機人員：</strong><strong>陳菁郁</strong><br>
+        • <strong>領隊國內電話：</strong><a href="tel:0982389047" style="color:var(--sky); font-weight:800; text-decoration:none;">0982-389-047</a><br>
+        • <strong>領隊國外電話：</strong><a href="tel:+819073142884" style="color:var(--sky); font-weight:800; text-decoration:none;">+81-090-7314-2884</a>
       </p>
-      <div class="tip-box tip-green">🌟 <strong>南台灣專屬直飛：</strong>免北上奔波，小港直飛仙台！回程晚班機直飛回台，把握 Outlet 與松島採買時光！</div>
+      <div class="tip-box tip-red">
+        ⚠️ <strong>出發前重要提醒：</strong><br>
+        1. <strong>護照效期：</strong>請務必攜帶符合規定效期 <strong>2027/05/23 之後</strong>的護照正本（曾報遺失之護照請勿攜帶）。<br>
+        2. <strong>役男申請：</strong>若具備役男身分，請確認已辦妥役男出境核准手續，以免影響登機。
+      </div>
     </div>
-    <div class="card">
-      <h3>🧳 團體機票行李額度規定</h3>
-      <p>
-        • <strong>免費託運行李：</strong>每位旅客享有 <strong>20 kg 託運行李</strong>（單件託運）。<br>
-        • <strong>手提隨身行李：</strong>每位旅客限帶 1 件手提行李 ＋ 1 件個人隨身物品，合計 <strong>不超過 10 kg</strong>。<br>
-        • <strong>關鍵安檢提醒：</strong>日本海關嚴格管制，行動電源、鋰電池請隨身攜帶；肉製品、未加工蔬果嚴禁攜帶入境日本或帶回台灣！
-      </p>
+
+    <div class="card" style="border-left: 6px solid var(--sky);">
+      <h3>✈️ 台灣虎航 (Tigerair Taiwan) 高雄直飛仙台航班表</h3>
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>航空公司</th>
+            <th>班機</th>
+            <th>起飛 / 抵達機場</th>
+            <th>起飛時間</th>
+            <th>抵達時間</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2026/11/23 (一)</strong></td>
+            <td>台灣虎航</td>
+            <td><strong>IT772</strong></td>
+            <td>高雄小港 (KHH) ➔ 仙台 (SDJ)</td>
+            <td><strong>13:25</strong></td>
+            <td><strong>17:55</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2026/11/28 (六)</strong></td>
+            <td>台灣虎航</td>
+            <td><strong>IT773</strong></td>
+            <td>仙台 (SDJ) ➔ 高雄小港 (KHH)</td>
+            <td><strong>18:50</strong></td>
+            <td><strong>22:30</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tip-box tip-green">🌟 <strong>南台灣直飛便利：</strong>本行程為包（加）班機，機票為特殊票種【無退票價值】，敬請準時集合辦理登機！</div>
     </div>
   </div>
 
@@ -263,60 +297,86 @@
   <div id="sec-overview" class="main-sec">
     <div class="card" style="border-left: 6px solid var(--forest);">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-        <h3 style="margin-bottom:0;">🗺️ 日本東北秋楓 6 日經典全景路線</h3>
-        <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">嚴選三大名湯・四大名溪・世界遺產</span>
+        <h3 style="margin-bottom:0;">🗺️ 日本東北賞楓・採果・四晚溫泉 6 日全景動線</h3>
+        <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">五福旅遊 SDJ06IT26N23K01</span>
       </div>
       <p style="margin:8px 0 14px; font-size:0.86rem; color:var(--muted);">
-        從仙台出發，環遊宮城、岩手、青森、秋田、山形五縣！搭乘八甲山紅葉纜車、秋田內陸縱貫鐵道，走訪神隱少女銀山溫泉與日本三景松島：
+        高雄小港直飛仙台，走訪岩手、青森、秋田、山形、宮城五縣精華名勝，連住四晚精選特色溫泉名宿：
       </p>
       <div style="background:#fdfaf4; border:2px solid var(--border); border-radius:16px; padding:16px; box-shadow:2px 2px 0px var(--border);">
         <div style="display:flex; align-items:flex-start; gap:12px;">
           <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">✈️</div>
           <div style="flex:1;">
-            <strong>1. 高雄小港 ➔ 仙台空港 ➔ 仙台市區飯店</strong>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">虎航直飛 ➔ 機上精緻餐食 ➔ 抵達東北第一大城仙台 ➔ 入住市區飯店休息</div>
+            <strong>DAY 1 (11/23 週一)：高雄小港 ➔ 仙台空港 ➔ 仙台市區</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">10:55 小港 3 樓虎航集合 ➔ IT772 (13:25-17:55) 直飛仙台 ➔ 住 仙台 HILLS HOTEL</div>
           </div>
         </div>
-        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 專車前進岩手縣名勝與世界文化遺產</div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 前進岩手縣名溪與世界遺產</div>
         <div style="display:flex; align-items:flex-start; gap:12px;">
           <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🚣</div>
           <div style="flex:1;">
-            <strong>2. 嚴美溪飛天糰子 ＆ 猊鼻溪遊船 ＆ 世界遺產中尊寺金色堂</strong>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">日本第一美溪 ➔ 船夫清唱猊鼻溪木舟 ➔ 平泉金色淨土 ➔ ♨️ 安比/八幡平高原溫泉</div>
+            <strong>DAY 2 (11/24 週二)：嚴美溪 ➔ 猊鼻溪遊船 ➔ 平泉中尊寺★金色堂</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">日本第一美溪 ➔ 日本百景扁舟 ➔ 世界遺產金色堂 ➔ ♨️ 住 新安比溫泉靜流閣</div>
           </div>
         </div>
-        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 越過縣界，深入青森絕美紅葉雙璧</div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 深入青森賞楓雙璧與八甲田山</div>
         <div style="display:flex; align-items:flex-start; gap:12px;">
           <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🚠</div>
           <div style="flex:1;">
-            <strong>3. 十和田湖展望台 ＆ 奧入瀨溪流 ＆ 蔦沼朝燒 ＆ 八甲山纜車</strong>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">銚子大瀑布奇岩名水 ➔ 紅葉倒影秘境蔦沼 ➔ 八甲田空中纜車俯瞰滿山斑斕 ➔ ♨️ 南田蘋果溫泉</div>
+            <strong>DAY 3 (11/25 週三)：十和田湖展望台 ➔ 奧入瀨溪流 ➔ 蔦沼 ➔ 八甲田纜車</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">銚子大瀑布奇岩名水 ➔ 蔦沼朝燒秘境 ➔ 八甲山空中纜車 ➔ ♨️ 住 南田溫泉 HOTEL APPLE LAND</div>
           </div>
         </div>
-        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 探訪日本百大名城與傳統民俗體驗</div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚌 津輕文化名城與青森採蘋果體驗</div>
         <div style="display:flex; align-items:flex-start; gap:12px;">
           <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🍎</div>
           <div style="flex:1;">
-            <strong>4. 弘前城 ＆ 津輕藩睡魔村 ＆ 弘前蘋果公園採果樂</strong>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">江戶名城鷹岡城 ➔ 巨大睡魔燈籠工藝 ➔ 親採青森香甜蜜蘋果 ➔ ♨️ 田澤湖/紫苑溫泉</div>
+            <strong>DAY 4 (11/26 週四)：弘前城 ➔ 津輕藩睡魔村 ➔ 弘前蘋果公園採果體驗</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">日本百大名城 ➔ 巨型睡魔燈籠工藝 ➔ 果園現採蜜蘋果 ➔ ♨️ 住 雫石王子大飯店</div>
           </div>
         </div>
-        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚃 乘坐復古秋田內陸鐵道，穿梭陸奧小京都</div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🚃 微笑鐵道與大正浪漫銀山溫泉</div>
         <div style="display:flex; align-items:flex-start; gap:12px;">
           <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🏯</div>
           <div style="flex:1;">
-            <strong>5. 田澤湖辰子像 ＆ 秋田內陸橫貫鐵道 ＆ 角館武家屋敷 ＆ 銀山溫泉街</strong>
-            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">日本最深琉璃湖泊 ➔ 微笑鐵道景觀列車 ➔ 黑色武士宅邸 ➔ 大正浪漫神隱少女瓦斯燈街景 ➔ ♨️ 天童名湯</div>
+            <strong>DAY 5 (11/27 週五)：田澤湖 ➔ 秋田內陸橫貫鐵道 ➔ 角館武家屋敷 ➔ 銀山溫泉街</strong>
+            <div style="font-size:0.82rem; color:var(--muted); margin-top:2px;">辰子像 ➔ 微笑鐵道(松葉+++角館) ➔ 陸奧小京都 ➔ 神隱少女場景 ➔ ♨️ 住 天童溫泉 瀧之湯</div>
           </div>
         </div>
-        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🛥️ 日本三景海灣巡航與三井 Outlet 購物</div>
+        <div style="margin:6px 0 6px 19px; padding-left:18px; border-left:3px dashed var(--border); font-size:0.8rem; font-weight:800; color:var(--calcifer);">🛥️ 日本三景巡航與三井 Outlet 採購</div>
         <div style="display:flex; align-items:center; gap:12px;">
           <div style="background:#fff; border:2px solid var(--border); border-radius:10px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;">🛫</div>
           <div>
-            <strong>6. 日本三景松島遊船 ＆ 五大堂 ＆ 烤魚板DIY ➔ 三井Outlet ➔ 高雄小港</strong><br>
-            <span style="font-size:0.82rem; color:var(--muted);">仙台港血拼採買，19:00 虎航直飛，22:10 滿載戰利品平安凱旋歸國</span>
+            <strong>DAY 6 (11/28 週六)：松島遊船 ➔ 五大堂 ➔ 烤魚板DIY ➔ 三井Outlet ➔ 高雄</strong><br>
+            <span style="font-size:0.82rem; color:var(--muted);">免稅店 ➔ 仙台港三井 Outlet ➔ IT773 (18:50-22:30) 平安返抵高雄</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- 餐食與住宿總表 -->
+    <div class="card">
+      <h3>📋 6 日餐食與住宿一覽表</h3>
+      <div style="overflow-x:auto;">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>天數</th>
+              <th>早餐</th>
+              <th>午餐</th>
+              <th>晚餐</th>
+              <th>住宿飯店</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>D1</strong> 11/23</td><td>X</td><td>X</td><td>機上餐食</td><td>仙台 HILLS HOTEL</td></tr>
+            <tr><td><strong>D2</strong> 11/24</td><td>飯店內用</td><td>塩燒香魚御膳</td><td>飯店內用和食料理</td><td>新安比溫泉靜流閣</td></tr>
+            <tr><td><strong>D3</strong> 11/25</td><td>飯店內用</td><td>東北米棒鍋套餐</td><td>飯店內用自助餐</td><td>南田溫泉 HOTEL APPLE LAND</td></tr>
+            <tr><td><strong>D4</strong> 11/26</td><td>飯店內用</td><td>津輕牛肉御膳</td><td>飯店內用自助餐</td><td>雫石王子大飯店</td></tr>
+            <tr><td><strong>D5</strong> 11/27</td><td>飯店內用</td><td>雞肉親子鍋御膳</td><td>飯店內用和食料理</td><td>天童溫泉 瀧之湯</td></tr>
+            <tr><td><strong>D6</strong> 11/28</td><td>飯店內用</td><td>松島牡蠣御膳</td><td>機上餐食</td><td>溫暖的家</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -338,22 +398,19 @@
 
     <!-- Stepper 按鈕列 -->
     <div class="stepper">
-      <!-- 前一天按鈕標籤 -->
       <label for="day-1-radio" class="btn-step-label prev-d1">⬅️ 前一天</label>
       <label for="day-2-radio" class="btn-step-label prev-d2">⬅️ 前一天</label>
       <label for="day-3-radio" class="btn-step-label prev-d3">⬅️ 前一天</label>
       <label for="day-4-radio" class="btn-step-label prev-d4">⬅️ 前一天</label>
       <label for="day-5-radio" class="btn-step-label prev-d5">⬅️ 前一天</label>
 
-      <!-- 標題 -->
-      <div class="day-step-title title-d1">📍 Day 1 ｜ 11/23 (週一) 高雄直飛仙台空港 ＆ 漫遊東北第一大城</div>
-      <div class="day-step-title title-d2">📍 Day 2 ｜ 11/24 (週二) 嚴美溪奇岩飛天糰子 ＆ 猊鼻溪遊船 ＆ 中尊寺</div>
-      <div class="day-step-title title-d3">📍 Day 3 ｜ 11/25 (週三) 十和田湖 ＆ 奧入瀨溪流 ＆ 八甲山空中纜車</div>
-      <div class="day-step-title title-d4">📍 Day 4 ｜ 11/26 (週四) 弘前城天守閣 ＆ 津輕睡魔村 ＆ 親採蜜蘋果</div>
-      <div class="day-step-title title-d5">📍 Day 5 ｜ 11/27 (週五) 田澤湖辰子像 ＆ 秋田縱貫鐵道 ＆ 銀山溫泉街</div>
-      <div class="day-step-title title-d6">📍 Day 6 ｜ 11/28 (週六) 松島遊船 ＆ 烤魚板 DIY ＆ 三井Outlet 採買</div>
+      <div class="day-step-title title-d1">📍 Day 1 ｜ 11/23 (週一) 高雄小港國際機場 ➔ 仙台空港 ➔ 仙台</div>
+      <div class="day-step-title title-d2">📍 Day 2 ｜ 11/24 (週二) 嚴美溪 ➔ 猊鼻溪遊船 ➔ 平泉中尊寺★金色堂</div>
+      <div class="day-step-title title-d3">📍 Day 3 ｜ 11/25 (週三) 十和田湖 ➔ 奧入瀨溪流 ➔ 蔦沼 ➔ 八甲田纜車</div>
+      <div class="day-step-title title-d4">📍 Day 4 ｜ 11/26 (週四) 弘前城 ➔ 津輕藩睡魔村 ➔ 弘前蘋果公園採果</div>
+      <div class="day-step-title title-d5">📍 Day 5 ｜ 11/27 (週五) 田澤湖 ➔ 秋田內陸橫貫鐵道 ➔ 角館 ➔ 銀山溫泉</div>
+      <div class="day-step-title title-d6">📍 Day 6 ｜ 11/28 (週六) 松島遊船 ➔ 五大堂 ➔ 烤魚板DIY ➔ 三井Outlet</div>
 
-      <!-- 後一天按鈕標籤 -->
       <label for="day-2-radio" class="btn-step-label next-d2">後一天 ➡️</label>
       <label for="day-3-radio" class="btn-step-label next-d3">後一天 ➡️</label>
       <label for="day-4-radio" class="btn-step-label next-d4">後一天 ➡️</label>
@@ -366,35 +423,35 @@
       <div class="banner">
         <div class="b-icon">🛫</div>
         <div class="b-title">
-          <h3>Day 1 ｜ 11/23 (週一) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">🌤️ 仙台 6°C ~ 14°C (乾爽微涼)</span></h3>
-          <h2>高雄直飛仙台空港 ＆ 漫遊東北第一大城</h2>
-          <p>住 仙台市區飯店 (KOKO / ROUTE INN / DORMY INN 或同級)</p>
+          <h3>Day 1 ｜ 11/23 (週一) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">集合 10:55 小港3F虎航櫃台</span></h3>
+          <h2>高雄小港國際機場 ➔ 仙台空港 ➔ 仙台</h2>
+          <p>🏨 住宿：仙台 HILLS HOTEL ｜ 🍽️ 早餐：X ｜ 午餐：X ｜ 晚餐：機上餐食</p>
         </div>
       </div>
       <div class="strat-card">
-        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>午後搭乘台灣虎航直飛班機直達仙台，通關後專車接送前往仙台市區飯店入住，好好休息調養體力。</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>抵達飯店後大行李一次安頓放妥，輕裝漫步飯店周邊或便利商店採買零食點心。</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/24) 展開賞楓名所巡禮！搭乘猊鼻溪木舟清唱遊船，造訪平泉世界文化遺產中尊寺金色堂！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>上午 10:55 於高雄小港機場國際航站 3 樓虎航櫃台集合（領隊陳菁郁 0982-389-047），搭乘 IT772 直飛仙台空港，前往東北第一大城「杜之都」仙台。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>大行李隨機託運直掛仙台，行動電源、鋰電池及護照隨身攜帶；晚間入住仙台 HILLS HOTEL 安頓休息。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/24) 前往岩手縣賞楓名勝嚴美溪、猊鼻溪遊船，並特別安排進入世界遺產平泉中尊寺★金色堂！</div></div>
       </div>
       <div class="v-timeline">
         <div class="v-line"></div>
         <div class="t-entry">
-          <div class="t-time">13:25</div>
+          <div class="t-time">10:55</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k flight">✈️ 虎航直飛</span><div class="s-title">高雄小港 (KHH) ➔ 仙台空港 (SDJ) 台灣虎航 IT 772</div></div>
-            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Sendai+Airport" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">搭乘台灣虎航直飛東北第一大門戶仙台（航程約 3h 45m），航程中享用精緻機上餐點。18:10 降落後專人引導通關。</div>
+            <div class="s-header"><span class="badge-k flight">✈️ 集合起飛</span><div class="s-title">高雄小港機場集合 ➔ 搭乘台灣虎航 IT772 (13:25 起飛 ➔ 17:55 抵達)</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Sendai+Airport" target="_blank">📍 仙台空港地圖</a></div>
+            <div class="s-desc"><strong>【仙台空港】</strong>作為日本東北地區最主要的國際與國內交通樞紐，仙台空港是開啟東北旅程的最完美起點。館內匯集豐富的宮城在地名產店與特色餐廳，頂樓設有開放式觀景台。搭配仙台機場鐵道僅需約 25 分鐘即可直達市中心。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 搭乘專屬空調遊覽車約 45 分鐘前往仙台市區飯店</div></div>
+        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車前往東北政治經濟文化中心「杜之都」仙台</div></div>
         <div class="t-entry">
-          <div class="t-time">19:30</div>
+          <div class="t-time">19:00</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k hotel">🏨 安頓入住</span><div class="s-title">入住仙台市區飯店 (KOKO / ROUTE INN 或同級)</div></div>
-            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Sendai+Station" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">辦理入住放下隨身行李，晚間可自由前往仙台車站商圈或青葉通街區漫步散策，品嚐道地仙台牛舌或毛豆麻糬！</div>
+            <div class="s-header"><span class="badge-k spot">🌲 杜之都</span><div class="s-title">【仙台】伊達政宗建立之歷史古城 ➔ 入住仙台 HILLS HOTEL</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=仙台市泉区実沢中山南25-5" target="_blank">📍 飯店導航</a></div>
+            <div class="s-desc"><strong>【仙台】</strong>日本東北地方政治和經濟的中心城市，市區中心林蔭道和公園綠木繁茂，因而有「杜之都」之稱。歷史上是「獨眼龍」伊達政宗以「青葉城」為根據地建立的藝術文學古城。晚間入住仙台 HILLS HOTEL（宮城県仙台市泉区実沢中山南25-5）。</div>
           </div>
         </div>
       </div>
@@ -405,62 +462,60 @@
       <div class="banner">
         <div class="b-icon">🚣</div>
         <div class="b-title">
-          <h3>Day 2 ｜ 11/24 (週二) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">⛅ 岩手 3°C ~ 11°C (溪谷微寒)</span></h3>
-          <h2>嚴美溪奇岩飛天糰子 ＆ 猊鼻溪遊船舟歌 ＆ 中尊寺金色堂</h2>
-          <p>♨️ 安比高原 ANA / 八幡平溫泉 (享受露天風呂大浴場)</p>
+          <h3>Day 2 ｜ 11/24 (週二) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">特別安排★中尊寺金色堂</span></h3>
+          <h2>飯店 ➔ 嚴美溪 ➔ 猊鼻溪遊船 ➔ 平泉中尊寺★金色堂 ➔ 安比</h2>
+          <p>♨️ 住宿：新安比溫泉靜流閣 ｜ 🍽️ 早：飯店內用 ｜ 午：塩燒香魚御膳 ｜ 晚：飯店內用和食料理</p>
         </div>
       </div>
       <div class="strat-card">
-        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>欣賞日本第一美溪嚴美溪峭壁奇岩，體驗纜繩吊籃飛天糰子；乘猊鼻溪扁舟穿梭奇岩峽谷；參訪平安時代藤原氏的世界遺產中尊寺金色堂。</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>隨身小包備妥禦寒手套圍巾，大行李放置遊覽車行李廂，傍晚抵達安比高原飯店享受溫泉大浴場！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/25) 進入青森賞楓核心！奧入瀨溪流步道散策 ＋ 蔦沼燃燒紅葉 ＋ 搭八甲田高空纜車！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>遊覽國家名勝「嚴美溪」奇岩碧水；搭乘日本百景「猊鼻溪遊船」穿梭百米峽谷；參訪世界遺產「平泉中尊寺」並特別進入★金色堂參觀。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>大行李隨旅遊巴士移動，隨身攜帶保暖外套與相機；傍晚入住新安比溫泉靜流閣享受溫泉名湯。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/25) 深入青森絕美景點！十和田湖展望台、奧入瀨溪流（銚子大瀑布）、蔦沼賞楓，以及搭乘八甲田空中纜車！</div></div>
       </div>
       <div class="v-timeline">
         <div class="v-line"></div>
         <div class="t-entry">
-          <div class="t-time">08:30</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🌊 第一美溪</span><div class="s-title">【嚴美溪】磐井川奇岩峽谷 ＆ 郭公飛天糰子 (空中飛籃體驗)</div></div>
+            <div class="s-header"><span class="badge-k spot">🌊 日本最美溪流</span><div class="s-title">【嚴美溪】國家名勝及天然紀念物・伊達政宗盛讚二大名勝之一</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Genbikei+Gorge" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">磐井川歷經萬年侵蝕形成的天然奇景！兩岸奇岩林立、碧綠深潭，體驗利用橫跨兩岸纜繩與木籃飛送的「郭公糰子」與熱茶！</div>
+            <div class="s-desc">由栗駒山流入磐井川，長約二公里，1927 年指定為國家名勝及天然紀念物。春季約 200 株櫻花點綴怪石奇岩間；夏天溪水如綠寶石般閃爍；秋季紅葉添上火紅色彩與碧波相映成趣；冬季披上銀白雪衣，仙台藩主伊達政宗公曾盛讚其絕美風光。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 30 分鐘前往猊鼻溪</div></div>
         <div class="t-entry">
-          <div class="t-time">10:30</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🚣 輕舟舟歌</span><div class="s-title">【猊鼻溪遊船】日本百景・百米懸崖石灰岩峽谷木舟巡禮</div></div>
+            <div class="s-header"><span class="badge-k spot">🚣 日本百景</span><div class="s-title">【猊鼻溪遊船】日本三大溪之一・百米峭壁奇岩扁舟</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Geibikei+Gorge" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">搭乘由船夫以單支竹竿撐行的傳統木扁舟，緩緩穿行在高度超過 100 米的險峻石灰岩懸崖峭壁間，船夫於回程清唱動人的《猊鼻追分》民謠。</div>
+            <div class="s-desc">全長約 2 公里，兩岸峭壁高達 50 至 100 公尺，被選為日本百景之一，與嵯峨溪、耶馬溪並稱「日本三大溪」。上游觀勝丘對岸有一塊突出的大鍾乳石，形狀酷似獅子的鼻子，因此得名猊鼻溪。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">12:15</div>
+          <div class="t-time">中午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k food">🍱 日式御膳</span><div class="s-title">午餐：鹽燒香魚御膳或日式特色鄉土定食</div></div>
-            <div class="s-desc">品嚐炭火慢烤香魚、當令在地時蔬煮物與香Q東北白米飯。</div>
+            <div class="s-header"><span class="badge-k food">🍱 特色午宴</span><div class="s-title">午餐：塩燒香魚御膳</div></div>
+            <div class="s-desc">享用在地新鮮現烤塩燒香魚日式定食料理。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">13:30</div>
+          <div class="t-time">下午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">⛩️ 世界遺產</span><div class="s-title">【平泉中尊寺】天台宗東北大本山・特別安排進入★【金色堂】</div></div>
+            <div class="s-header"><span class="badge-k spot">⛩️ 世界文化遺產</span><div class="s-title">【平泉中尊寺】特別安排前往★【金色堂】</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Chusonji+Temple" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">2011年登錄世界文化遺產！平安時代藤原清衡所建，全殿貼滿純金金箔的國寶「金色堂」，內部螺鈿蒔繪金碧輝煌，寄託佛教理想淨土。</div>
+            <div class="s-desc">建於西元 850 年，由慈覺大師圓仁開山，2011 年登錄世界文化遺產。12 世紀初期奧州藤原氏初代清衡大規模擴建，追悼戰亂逝者並宣示「絕不再次陷入戰亂的決心」。特別安排進入國寶「金色堂」參觀，其金箔建築、工藝品及雕刻保存完好。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 1.5 小時前往安比高原 / 八幡平溫泉渡假勝地</div></div>
         <div class="t-entry">
-          <div class="t-time">17:30</div>
+          <div class="t-time">晚間</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k hotel">♨️ 高原名湯</span><div class="s-title">入住安比高原 ANA 渡假飯店 / 八幡平溫泉 ＆ 晚宴百匯盛宴</div></div>
-            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=ANA+Crowne+Plaza+Resort+Appi+Kogen" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">享用飯店內豐盛日式會席或豪華自助餐。換上日式浴衣浸泡「白樺之湯」露天風呂，仰望滿天繁星洗去疲憊。</div>
+            <div class="s-header"><span class="badge-k hotel">♨️ 溫泉名宿</span><div class="s-title">入住：新安比溫泉靜流閣 ＆ 飯店內用和食料理</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=新安比温泉静流閣" target="_blank">📍 飯店導航</a></div>
+            <div class="s-desc">入住八幡平市「新安比溫泉靜流閣」，享用飯店內用和食料理（依飯店搭配），浸泡名湯消除旅途疲勞。</div>
           </div>
         </div>
       </div>
@@ -471,70 +526,69 @@
       <div class="banner">
         <div class="b-icon">🚠</div>
         <div class="b-title">
-          <h3>Day 3 ｜ 11/25 (週三) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">🍂 青森山區 0°C ~ 8°C (山頂近冰點)</span></h3>
-          <h2>十和田湖展望台 ＆ 奧入瀨溪流 ＆ 蔦沼 ＆ 八甲山空中纜車</h2>
-          <p>♨️ 南田蘋果溫泉 HOTEL APPLE LAND / 弘前溫泉</p>
+          <h3>Day 3 ｜ 11/25 (週三) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">八甲田纜車如停駛退 ¥2000/人</span></h3>
+          <h2>飯店 ➔ 十和田湖展望台 ➔ 奧入瀨溪流・銚子大瀑布 ➔ 蔦沼 ➔ 八甲田纜車</h2>
+          <p>♨️ 住宿：南田溫泉 HOTEL APPLE LAND ｜ 🍽️ 早：飯店 ｜ 午：東北米棒鍋套餐 ｜ 晚：飯店自助餐</p>
         </div>
       </div>
       <div class="strat-card">
-        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>俯瞰深藍十和田湖，漫步奧入瀨溪銚子大瀑布奇岩名水；造訪如烈火般倒映的蔦沼；搭乘八甲田空中纜車俯瞰整座山巒斑斕楓紅！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>山頂風大體感溫度接近零度，請務必攜帶防風保暖外套、手套、毛帽！大行李隨車移動。</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/26) 造訪江戶名城弘前城，在津輕藩睡魔村欣賞巨型祭典燈籠，並前往蘋果公園親手採摘青森蜜蘋果！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>眺望日本第三深火山湖「十和田湖」，漫步世界第一美溪「奧入瀨溪流」及銚子大瀑布；造訪「蔦沼」賞楓名所，並搭乘「八甲田纜車」俯瞰連綿山色。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>高山區氣溫較低，請隨身備妥防風禦寒外套、手套與毛帽；若遇強風雨天或檢修導致八甲田纜車停駛，每人現場退費 2000 日幣。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/26) 探訪百大名城「弘前城」、參觀「津輕藩睡魔村」，並前往「弘前蘋果公園」體驗親採青森蜜蘋果樂趣！</div></div>
       </div>
       <div class="v-timeline">
         <div class="v-line"></div>
         <div class="t-entry">
-          <div class="t-time">08:30</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🌊 雙重火口</span><div class="s-title">【十和田湖展望台】日本第三深葫蘆形神秘深藍火山湖</div></div>
+            <div class="s-header"><span class="badge-k spot">🌊 特別名勝</span><div class="s-title">【十和田湖】十和田湖展望台・日本第三深雙層火山口湖</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Towada" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">海拔 400 米的火口湖，水深達 327 米！湖水清澈深藍如寶石，登展望台俯瞰整座湖泊與周圍群山秋色相映成趣。</div>
+            <div class="s-desc">面積達 61.1 平方公里，最大深度 327 公尺（僅次於田澤湖與支笏湖），水質透明度高，深達 10 米處仍清晰見底。湖畔立有高村光太郎最後作品青銅雕像「乙女像」。於海拔 400 米高之展望台眺望湖光山色。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">10:00</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🍁 世界名溪</span><div class="s-title">【奧入瀨溪流】長達 14 公里青苔奇岩・銚子大瀑布精華散策</div></div>
+            <div class="s-header"><span class="badge-k spot">🍁 世界第一美溪</span><div class="s-title">【奧入瀨溪流】＆【銚子大瀑布】</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Oirase+Gorge" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">日本國家特別名勝！沿著清澈溪谷漫步，參觀寬 20 米、落差 7 米的「銚子大瀑布」，溪流白絹奔流、激起水霧，遍布青苔的奇岩被楓紅緊緊包圍。</div>
+            <div class="s-desc">全長約 14 公里，未受人工種植培育，保留原始純淨美感。參觀奧入瀨最大瀑布<strong>【銚子大瀑布】</strong>（高 7 米、寬 20 米），壯麗水量阻止魚類溯溪進入十和田湖，如同守護者般氣勢磅礡。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">12:00</div>
+          <div class="t-time">中午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k food">🍲 鄉土風味</span><div class="s-title">午餐：東北鄉土料理或日式特色御膳料理</div></div>
-            <div class="s-desc">在溪谷周邊享用暖胃日式小火鍋、烤魚與山菜料理。</div>
+            <div class="s-header"><span class="badge-k food">🍲 鄉土名物</span><div class="s-title">午餐：東北米棒鍋套餐</div></div>
+            <div class="s-desc">品嚐熱騰騰道地秋田東北米棒鍋套餐料理。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">13:30</div>
+          <div class="t-time">下午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🔥 紅葉秘境</span><div class="s-title">【蔦沼】青森絕美秘境・大自然調色盤倒影</div></div>
+            <div class="s-header"><span class="badge-k spot">🔥 賞楓名所</span><div class="s-title">【蔦沼】八甲田山麓「蔦之七沼」最大沼澤</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tsuta+Numa" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">被原始山毛櫸林環繞的蔦之七沼之首！湖水平靜如明鏡，四周群山紅葉倒映水面，呈現大自然最極致的絢爛色彩。</div>
+            <div class="s-desc">被原始山毛櫸林環繞的沼澤，以秋季「蔦沼朝燒」聞名全日本，平靜湖面映照山毛櫸林倒影，景色如畫。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">15:00</div>
+          <div class="t-time">下午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🚠 空中巡禮</span><div class="s-title">【八甲田山纜車】(含往返乘車券) 俯瞰整座連綿壯麗紅葉山脈</div></div>
+            <div class="s-header"><span class="badge-k spot">🚠 高山纜車</span><div class="s-title">【八甲田纜車】俯瞰八甲田山連綿山脈景觀</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Hakkoda+Ropeway" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">搭乘大型纜車約 10 分鐘直抵八甲田山頂公園站！居高臨下 360 度鳥瞰整片山谷斑斕秋葉，遠眺青森市區與陸奧灣！</div>
+            <div class="s-desc">搭乘纜車便捷抵達八甲田高山，沿途從空中俯瞰壯麗的山脈景觀與滿山秋色。（註：若遇天然災害、強風雨天或檢修停駛，每人退費 2000 日幣）。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 50 分鐘前往津輕平原南田溫泉</div></div>
         <div class="t-entry">
-          <div class="t-time">17:30</div>
+          <div class="t-time">晚間</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k hotel">♨️ 蘋果溫泉</span><div class="s-title">入住南田溫泉 HOTEL APPLE LAND (蘋果足湯 ＆ 鮮甜蘋果池泡湯)</div></div>
-            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Minamida+Onsen+Hotel+Apple+Land" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">全日本獨一無二的「蘋果風呂」！水面漂浮滿池新鮮紅蘋果，散發迷人果香；晚宴享用津輕旬彩和食御膳。</div>
+            <div class="s-header"><span class="badge-k hotel">♨️ 蘋果溫泉</span><div class="s-title">入住：南田溫泉 HOTEL APPLE LAND ＆ 飯店內用自助餐</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=青森県平川市町居南田166-3" target="_blank">📍 飯店導航</a></div>
+            <div class="s-desc">入住青森縣平川市「南田溫泉 HOTEL APPLE LAND」，體驗特色溫泉並享用飯店內用自助餐（依飯店搭配）。</div>
           </div>
         </div>
       </div>
@@ -545,61 +599,60 @@
       <div class="banner">
         <div class="b-icon">🍎</div>
         <div class="b-title">
-          <h3>Day 4 ｜ 11/26 (週四) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">⛅ 青森/秋田 4°C ~ 12°C</span></h3>
-          <h2>弘前城天守閣 ＆ 津輕藩睡魔村 ＆ 蘋果公園親採蜜蘋果</h2>
-          <p>♨️ 田澤湖渡假村 / 盛岡森之風 / 紫苑溫泉</p>
+          <h3>Day 4 ｜ 11/26 (週四) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">特別安排：果園採果體驗</span></h3>
+          <h2>飯店 ➔ 弘前城 ➔ 津輕藩睡魔村 ➔ 弘前蘋果公園・採果體驗 ➔ 雫石</h2>
+          <p>♨️ 住宿：雫石王子大飯店 ｜ 🍽️ 早：飯店 ｜ 午：津輕牛肉御膳 ｜ 晚：飯店自助餐</p>
         </div>
       </div>
       <div class="strat-card">
-        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>登日本百大名城弘前城，在睡魔村觀摩震撼的祭典大扇燈與傳統樂器演奏；親身走入果園摘採世界聞名的青森蜜蘋果！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>採果時請穿著平底防滑球鞋，採下的香甜蘋果可當場品嚐或外帶享用！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/27) 前往琉璃深藍田澤湖，搭乘秋田內陸縱貫鐵道，走訪陸奧小京都角館，傍晚前進神隱少女銀山溫泉！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>參訪日本唯一保留在原址的江戶時代天守「弘前城」；在「津輕藩睡魔村」欣賞巨型睡魔燈籠與三味線演奏；走進「弘前蘋果公園」體驗親手採果！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>採果規則依實際前往之果園規定為準，如欲外帶水果需依規定另行自費購買；若遇果園未開放或季節因素無法採果則改招待季節水果。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/27) 遊覽日本最深「田澤湖」、搭乘微笑鐵道「秋田內陸橫貫鐵道」，漫步「角館武家屋敷」與神隱少女場景「銀山溫泉街」！</div></div>
       </div>
       <div class="v-timeline">
         <div class="v-line"></div>
         <div class="t-entry">
-          <div class="t-time">08:30</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🏯 百大名城</span><div class="s-title">【弘前城】(鷹岡城) 津輕藩主江戶現存天守閣・國家指定史蹟</div></div>
+            <div class="s-header"><span class="badge-k spot">🏯 日本百大名城</span><div class="s-title">【弘前城】東北保存最完整江戶時代城郭</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Hirosaki+Castle" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">西元 1611 年築城，東北唯一現存天守閣！城郭護城河旁松林古木蒼翠，登上本丸俯瞰岩木山雄偉身姿。</div>
+            <div class="s-desc">建於 1611 年，由津輕氏興建，現存三層天守為 1810 年重建，是日本唯一一座仍保留在原址的江戶時代天守。古老天守、石牆與護城河相映成趣。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">10:00</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🏮 傳統祭典</span><div class="s-title">【津輕藩睡魔村】展出壯麗巨型睡魔燈籠・津輕三味線與民俗工藝</div></div>
+            <div class="s-header"><span class="badge-k spot">🏮 民俗工藝</span><div class="s-title">【津輕藩睡魔村】睡魔燈籠展示 ＆ 津輕三味線現場演奏</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tsugaru-han+Neputa+Village" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">重現登錄無形民俗文化遺產的睡魔祭現場！展出高達數公尺的大型扇形彩繪燈籠，親身體驗太鼓打擊與工藝製作。</div>
+            <div class="s-desc">以弘前睡魔祭為主題的文化體驗設施，館內展示精美弘前睡魔燈籠與各種津輕傳統工藝品，現場更可聆聽震撼人心的津輕三味線演奏。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">11:30</div>
+          <div class="t-time">中午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k food">🥢 鄉土旬味</span><div class="s-title">午餐：日式特色鄉土定食料理</div></div>
-            <div class="s-desc">品嚐津輕傳統貝燒味噌、鮮脆時蔬與熱呼呼的烏龍麵定食。</div>
+            <div class="s-header"><span class="badge-k food">🥩 津輕美饌</span><div class="s-title">午餐：津輕牛肉御膳</div></div>
+            <div class="s-desc">享用青森津輕地區特色牛肉御膳定食。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">13:00</div>
+          <div class="t-time">下午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🍎 採果體驗</span><div class="s-title">【弘前蘋果公園】果園現採鮮甜青森蜜蘋果體驗</div></div>
+            <div class="s-header"><span class="badge-k spot">🍎 親手採果</span><div class="s-title">【弘前蘋果公園】＆【觀光果園採果體驗】</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Hirosaki+Apple+Park" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">青森為日本第一蘋果王國！親手摘採枝頭成熟飽滿的蜜蘋果，咬下瞬間汁多脆甜、果香四溢！（每人採果體驗）</div>
+            <div class="s-desc">佔地約 9.7 公頃，以岩木山為背景種植約 80 品種、2300 棵蘋果樹。「蘋果之家」販售超過 1000 種蘋果特色商品與蘋果咖哩、冰淇淋輕食。安排進入觀光果園體驗親自挑選與摘取新鮮時令水果的樂趣！</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車南下穿越山林約 2 小時前往秋田田澤湖</div></div>
         <div class="t-entry">
-          <div class="t-time">17:30</div>
+          <div class="t-time">晚間</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k hotel">♨️ 湖畔名湯</span><div class="s-title">入住田澤湖 LAKE RESORT / 森之風 / 紫苑溫泉</div></div>
-            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tazawako+Lake+Resort" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">入住秋田特色溫泉渡假飯店，享用飯店日式會席料理或百匯大餐，浸泡滑潤溫泉大浴場舒緩筋骨。</div>
+            <div class="s-header"><span class="badge-k hotel">♨️ 渡假名宿</span><div class="s-title">入住：雫石王子大飯店 (Shizukuishi Prince Hotel) ＆ 飯店自助餐</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Shizukuishi+Prince+Hotel" target="_blank">📍 飯店導航</a></div>
+            <div class="s-desc">入住岩手郡雫石町高倉溫泉「雫石王子大飯店」，享用飯店內用自助餐（依飯店搭配）並體驗高倉溫泉名湯。</div>
           </div>
         </div>
       </div>
@@ -610,71 +663,69 @@
       <div class="banner">
         <div class="b-icon">🏯</div>
         <div class="b-title">
-          <h3>Day 5 ｜ 11/27 (週五) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">❄️ 秋田/山形 2°C ~ 10°C (溫泉街轉冷)</span></h3>
-          <h2>田澤湖辰子像 ＆ 秋田縱貫鐵道 ＆ 角館 ＆ 大正浪漫銀山溫泉</h2>
-          <p>♨️ 天童溫泉 瀧之湯 (或王將/榮屋) / 鳴子溫泉</p>
+          <h3>Day 5 ｜ 11/27 (週五) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">微笑鐵道 ＋ 神隱少女銀山溫泉</span></h3>
+          <h2>飯店 ➔ 田澤湖 ➔ 秋田內陸橫貫鐵道 ➔ 角館武家屋敷 ➔ 銀山溫泉街</h2>
+          <p>♨️ 住宿：天童溫泉 瀧之湯 ｜ 🍽️ 早：飯店 ｜ 午：雞肉親子鍋御膳 ｜ 晚：飯店和食料理</p>
         </div>
       </div>
       <div class="strat-card">
-        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>朝聖琉璃寶藍田澤湖金身辰子像；搭乘秋田內陸縱貫鐵道穿梭深山田園；漫步角館武家屋敷黑色板牆；傍晚漫步神隱少女銀山溫泉瓦斯燈街景！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>銀山溫泉街需搭接駁車前往且遊客眾多，請隨身攜帶隨身包包，大行李留在車上即可。</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/28) 最後一天！搭乘松島遊船欣賞日本三景，親手體驗烤魚板 DIY，三井 Outlet 購物後直飛返台！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>造訪日本最深湖泊「田澤湖」與金色辰子像；搭乘「秋田內陸橫貫鐵道」(松葉+++角館)；漫步陸奧小京都「角館武家屋敷」；走進大正浪漫「銀山溫泉街」。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>銀山溫泉街規定需轉乘「接駁車」前往（如遇人數管制依現場為準），隨身帶好輕便包包與相機；秋田內陸線如遇運休停駛則退費（佔床¥500/不佔床¥300）。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>明日 (11/28) 行程最終日！巡航日本三景「松島遊船」、五大堂、親手體驗「烤魚板 DIY」，免稅店與三井 Outlet 仙台港購物後直飛返高雄！</div></div>
       </div>
       <div class="v-timeline">
         <div class="v-line"></div>
         <div class="t-entry">
-          <div class="t-time">08:30</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">💧 日本最深</span><div class="s-title">【田澤湖】日本最深琉璃湖泊 ＆ 金色【辰子像】傳說</div></div>
+            <div class="s-header"><span class="badge-k spot">💧 日本百景</span><div class="s-title">【田澤湖】日本最深湖泊 ＆ 金色【辰子像】＆ 浮木神社</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Lake+Tazawa" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">水深 423 米全日第一！湖面在陽光下映出夢幻「田澤藍」。湖畔佇立著祈求永保青春化為巨龍的金黃辰子雕像，也是台灣澄清湖姐妹湖。</div>
+            <div class="s-desc">日本最深湖泊，湖水顏色千變萬化呈現靛紫亮藍與湛藍。湖畔佇立著祈禱青春永駐化為巨龍的金色女性雕像「辰子像」，旁有締結良緣能量場所「浮木神社」與紅色鳥居「御座石神社」。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">09:40</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k train">🚃 微笑鐵道</span><div class="s-title">【秋田內陸縱貫鐵道】搭乘景觀火車 (松葉站 ➔ 角館站)</div></div>
+            <div class="s-header"><span class="badge-k train">🚃 微笑鐵道</span><div class="s-title">【秋田內陸橫貫鐵道】(松葉 +++ 角館)</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Matsuba+Station" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">被鐵道迷譽為「微笑鐵道」！列車穿梭在純樸無垢的山林、深邃鐵橋與溪谷田園間，車窗外美景如一幅幅流動的畫卷。</div>
+            <div class="s-desc">享有「微笑鐵道」與「秋田犬列車」美稱，沿途穿越橋樑、隧道、田園與溪谷美景，以悠閒速度飽覽秋田四季自然與人文風光。（若遇停駛則退費佔床500日幣/不佔床300日幣）。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">10:45</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">⚔️ 小京都</span><div class="s-title">【角館武家屋敷】陸奧小京都・江戶初期武士宅邸街道群</div></div>
+            <div class="s-header"><span class="badge-k spot">⚔️ 陸奧小京都</span><div class="s-title">【角館武家屋敷】國家重要傳統建築物群保存地區</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Kakunodate+Samurai+District" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">日本國家重要傳統建造物保存區！黑色厚實木板牆、莊嚴武士宅邸林立，青柳家與石黑家完整展示古代武士佩劍、盔甲與歷史文物。</div>
+            <div class="s-desc">江戶時代繁盛的城下町，建於約 400 年前的武士宅邸與黑色板牆完整保留當時的地割與建築風格，充滿古樸歷史韻味。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">12:15</div>
+          <div class="t-time">中午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k food">🍲 名物米棒</span><div class="s-title">午餐：秋田名物米棒鍋 (Kiritanpo) 套餐或和風料理</div></div>
-            <div class="s-desc">將米飯裹在木棒上炙烤後切段，加入比內地雞、牛蒡與大蔥熬煮的鮮甜高湯，秋田第一名道地鍋物！</div>
+            <div class="s-header"><span class="badge-k food">🍲 秋田風味</span><div class="s-title">午餐：雞肉親子鍋御膳</div></div>
+            <div class="s-desc">品嚐秋田知名比內地雞肉親子鍋溫暖定食。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 2 小時前往山形縣尾花澤市</div></div>
         <div class="t-entry">
-          <div class="t-time">15:30</div>
+          <div class="t-time">下午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🏮 大正浪漫</span><div class="s-title">【銀山溫泉街】走進宮崎駿《神隱少女》・大正時代木造溫泉旅館群</div></div>
+            <div class="s-header"><span class="badge-k spot">🏮 神隱少女場景</span><div class="s-title">【銀山溫泉街】大正時代木造客棧風情 (轉乘接駁車前往)</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Ginzan+Onsen" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">原為銀礦採掘地，後轉型為仙境溫泉鄉！銀山川兩側保存著完好的三四層木造洋風閣樓，傍晚黃昏煤氣瓦斯燈點亮，如夢似幻的大正風情！</div>
+            <div class="s-desc">坐落於昔日銀礦舊址，銀山川兩側林立著古樸優美的傳統木造客棧，彷彿穿越到大正時代與《神隱少女》般的夢幻世界，銀山溫泉泉質屬於略帶鹹味的硫磺泉。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 50 分鐘前往天童溫泉鄉</div></div>
         <div class="t-entry">
-          <div class="t-time">18:00</div>
+          <div class="t-time">晚間</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k hotel">♨️ 將棋名湯</span><div class="s-title">入住天童溫泉 瀧之湯 (或王將/榮屋) ＆ 享用精緻山形會席晚宴</div></div>
-            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Tendo+Onsen+Takinoyu" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">將棋產量全日第一的天童溫泉！享受寬敞的檜木風呂與庭園露天風呂，品嚐頂級山形牛肉與會席料理。</div>
+            <div class="s-header"><span class="badge-k hotel">♨️ 天童名湯</span><div class="s-title">入住：天童溫泉 瀧之湯 ＆ 飯店內用和食料理</div></div>
+            <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=山形県天童市鎌田本町1-1-30" target="_blank">📍 飯店導航</a></div>
+            <div class="s-desc">入住山形縣天童市「天童溫泉 瀧之湯」，享用精緻飯店內用和食料理（依飯店搭配）。</div>
           </div>
         </div>
       </div>
@@ -685,69 +736,68 @@
       <div class="banner">
         <div class="b-icon">🛥️</div>
         <div class="b-title">
-          <h3>Day 6 ｜ 11/28 (週六) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">☀️ 仙台 8°C ~ 15°C (晴朗舒適)</span></h3>
-          <h2>松島遊船日本三景 ＆ 烤魚板DIY ＆ 三井Outlet 採買賦歸</h2>
-          <p>平安回到溫暖可愛的家</p>
+          <h3>Day 6 ｜ 11/28 (週六) <span style="font-size:0.75rem; background:#fff; border:1px solid var(--border); padding:2px 7px; border-radius:999px; color:var(--forest); margin-left:4px;">回程 IT773 18:50起飛 ➔ 22:30抵達</span></h3>
+          <h2>飯店 ➔ 松島遊船 ➔ 五大堂 ➔ 烤魚板DIY ➔ 免稅店 ➔ 三井Outlet ➔ 高雄</h2>
+          <p>🏡 住宿：溫暖的家 ｜ 🍽️ 早：飯店 ｜ 午：松島牡蠣御膳 ｜ 晚：機上餐食</p>
         </div>
       </div>
       <div class="strat-card">
-        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>乘遊船巡禮日本三景松島灣兩百座翠綠松島；參觀桃山建築五大堂；親手現烤香脆魚板；在三井 Outlet 盡情採買戰利品，直飛返高雄！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>早晨退房將大行李打包整齊上車，Outlet 與機場採買的液體名產記得放入託運，隨身帶好護照正本！</div></div>
-        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 明日提醒</span><div>晚間 22:10 平安降落高雄小港國際機場，帶著滿滿東北楓紅與名湯溫暖回憶圓滿賦歸！</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#eaf3ec; color:#1c4826;">📝 今日摘要</span><div>搭乘遊覽船巡禮日本三景「松島」，參訪東北最古老桃山建築「五大堂」，體驗「烤魚板 DIY」；前往免稅店及東北最大「三井 OUTLET PARK 仙台港」購物後搭機返台。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbf3e2; color:#78480d;">🧳 行李安置</span><div>早晨退房將大行李搬上遊覽車，免稅店與 Outlet 採購之液體類商品請於機場報到前放入託運行李箱；松島遊船如因天候無法搭乘每人退費 500 日幣。</div></div>
+        <div class="strat-row"><span class="strat-badge" style="background:#fbeee8; color:#9c3319;">🔔 返程提醒</span><div>晚間搭乘台灣虎航 IT773 (18:50 起飛)，預計 22:30 平安返抵高雄小港國際機場，結束美好的東北賞楓溫泉之旅！</div></div>
       </div>
       <div class="v-timeline">
         <div class="v-line"></div>
         <div class="t-entry">
-          <div class="t-time">08:45</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🌊 日本三景</span><div class="s-title">【松島灣遊船】(含乘船券) 巡遊日本三景・兩百餘座青松奇岩群島</div></div>
+            <div class="s-header"><span class="badge-k spot">🌊 日本三景</span><div class="s-title">【松島遊船】巡航約 260 個青松奇岩島嶼</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Matsushima+Bay" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">與京都天橋立、廣島宮島並列「日本三景」！乘遊船自海上優雅視角遠眺仁王島、鐘島等覆蓋著松樹的奇岩絕景。</div>
+            <div class="s-desc">搭乘松島灣遊覽船穿越約 260 個大小島嶼奇景，黑松與紅松挺立於灰白岩石上，盡覽「日本三大名景」之絕美風光（若因天候或不可抗力無法搭乘退費 500 日幣/人）。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">10:00</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">⛩️ 桃山國寶</span><div class="s-title">【松島五大堂】東北最古老桃山建築 ＆ 紅色結緣「透橋」</div></div>
+            <div class="s-header"><span class="badge-k spot">⛩️ 重要文化財</span><div class="s-title">【松島五大堂】東北最古老桃山時代建築 ＆ 紅色「すかし橋」</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Godaido+Temple" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">伊達政宗於 1604 年重建的代表建築，矗立在海中島嶼上，通過橋面鏤空的紅色「透橋」，低頭可見碧綠海水，風景極美。</div>
+            <div class="s-desc">松島的象徵，橫梁刻有十二生肖，內部供奉每 33 年才開放一次的五大明王。走過與海岸相連、橋面特意設計間隙的紅色木橋「すかし橋（有空隙的橋）」以示靜心凝神。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">11:00</div>
+          <div class="t-time">上午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k food">🍢 現烤體驗</span><div class="s-title">【烤魚板 (笹かまぼこ) DIY 體驗】親手炭烤仙台必吃名產</div></div>
+            <div class="s-header"><span class="badge-k food">🍢 在地體驗</span><div class="s-title">【烤魚板 DIY 體驗】親手現烤外酥內嫩鮮魚板</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Matsushima+Kamaboko" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">親手將竹葉形魚板放在紅外線烤架上慢慢烘烤，待表皮膨脹金黃酥脆即可趁熱咬下，鮮香彈牙好玩又美味！</div>
+            <div class="s-desc">親手體驗現烤松島魚板，現烤出爐外酥內嫩、充滿鮮魚風味，簡單有趣又美味。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">12:00</div>
+          <div class="t-time">中午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k food">🥢 松島午宴</span><div class="s-title">午餐：松島特色和風料理或牡蠣御膳</div></div>
-            <div class="s-desc">品嚐宮城縣新鮮海產、炸牡蠣與精緻日式釜飯。</div>
+            <div class="s-header"><span class="badge-k food">🦪 松島海味</span><div class="s-title">午餐：松島牡蠣御膳</div></div>
+            <div class="s-desc">品嚐宮城松島灣特產肥美牡蠣料理御膳。</div>
           </div>
         </div>
         <div class="t-entry">
-          <div class="t-time">13:30</div>
+          <div class="t-time">下午</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k spot">🛍️ 血拼採買</span><div class="s-title">【免稅店】＆【三井 OUTLET PARK 仙台港】最後大採購！</div></div>
+            <div class="s-header"><span class="badge-k spot">🛍️ 購物采風</span><div class="s-title">【免稅店】＆【三井 OUTLET PARK 仙台港】</div></div>
             <div class="link-row"><a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Mitsui+Outlet+Park+Sendai+Port" target="_blank">📍 Google Maps 導航</a></div>
-            <div class="s-desc">東北規模最大 Outlet！擁有 120 家國際知名品牌、日系服飾、運動用品與廚具，享退稅優惠採買最後戰利品！</div>
+            <div class="s-desc">前往免稅店選購日本製美妝、健康食品與電器；隨後前往東北地區最大購物折扣商城<strong>【三井 OUTLET PARK 仙台港】</strong>（匯集約 120 家品牌），商場外設有大摩天輪「Port Flower」。</div>
           </div>
         </div>
-        <div class="transit-bar"><div class="transit-pill"><span>⬇️</span> 🚌 專車約 25 分鐘前往仙台空港辦理登機與行李托運</div></div>
         <div class="t-entry">
-          <div class="t-time">19:00</div>
+          <div class="t-time">18:50</div>
           <div class="t-node"></div>
           <div class="s-box">
-            <div class="s-header"><span class="badge-k flight">🛫 虎航凱旋</span><div class="s-title">仙台空港 (SDJ) ➔ 高雄小港 (KHH) 台灣虎航 IT 773</div></div>
-            <div class="s-desc">搭乘台灣虎航晚班機直飛返台（飛行時間約 4h 10m），機上享用精緻餐食，於 22:10 平安返抵高雄小港機場，圓滿返家！</div>
+            <div class="s-header"><span class="badge-k flight">🛫 平安返國</span><div class="s-title">仙台空港 ➔ 高雄小港國際機場 (台灣虎航 IT773 18:50 起飛 ➔ 22:30 抵達)</div></div>
+            <div class="s-desc">專車前往仙台空港辦理登機手續，搭乘虎航直飛返抵高雄小港國際機場，返回溫暖的家！</div>
           </div>
         </div>
       </div>
@@ -761,46 +811,54 @@
         <h3 style="margin-bottom:0;">💴 日幣 (JPY) 即時換算新台幣 (TWD) 計算機</h3>
         <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">匯率 1 JPY ≈ 0.22 TWD</span>
       </div>
-      <p style="margin:6px 0 10px; font-size:0.86rem; color:var(--muted);">在日本溫泉街或商店街買特產伴手禮，輸入日幣含稅金額（例如 3500）：</p>
+      <p style="margin:6px 0 10px; font-size:0.86rem; color:var(--muted);">在日本買蘋果派、牛舌或伴手禮，輸入日幣含稅金額（例如 2500）：</p>
       <div style="display:flex; align-items:center; gap:8px;">
-        <input type="number" id="jpy-in" class="input-box" placeholder="輸入日幣金額 (例: 3500)" oninput="calcJpy()" />
+        <input type="number" id="jpy-in" class="input-box" placeholder="輸入日幣金額 (例: 2500)" oninput="calcJpy()" />
         <span style="font-size:1.1rem; font-weight:900;">¥ JPY</span>
       </div>
       <div style="margin-top:12px; padding:12px; background:var(--hay-bg); border:2px solid var(--border); border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
         <div>
           <div style="font-size:0.78rem; font-weight:800; color:var(--muted);">折合新台幣約</div>
-          <div style="font-size:0.75rem; color:#8c7e6e;" id="jpy-calc-note">輸入金額即刻計算</div>
+          <div style="font-size:0.75rem; color:#8c7e6e;" id="jpy-calc-note">本行程餐標：中餐 ¥2500~3000 / 晚餐 ¥3000~3500</div>
         </div>
         <div style="text-align:right;">
           <div style="font-size:1.4rem; font-weight:900; color:var(--calcifer);" id="twd-out">NT$ 0</div>
-          <div style="font-size:0.78rem; font-weight:800; color:var(--forest);" id="twd-hint">心算秘訣：日幣金額除以 4.5 (或乘 0.22)</div>
+          <div style="font-size:0.78rem; font-weight:800; color:var(--forest);">心算秘訣：日幣金額除以 4.5 (或乘 0.22)</div>
         </div>
       </div>
     </div>
     <div class="card">
-      <h3>🍱 東北經典老饕名產對照庫</h3>
+      <h3>🍱 行程精選在地美味圖鑑</h3>
       <div id="menu-items">
-        <div style="font-size:0.92rem; font-weight:900; color:var(--forest); margin:12px 0 6px;">🥩 宮城仙台名物 (牛舌與魚板)</div>
+        <div style="font-size:0.92rem; font-weight:900; color:var(--forest); margin:12px 0 6px;">🥩 行程安排特色御膳與百匯</div>
         <div class="m-item">
-          <div><strong>牛たん定食 (極厚切牛舌定食)</strong> <span style="font-size:0.82rem; color:var(--muted);">炭烤牛舌＋麥飯＋牛尾湯</span></div>
-          <div><span style="font-weight:900; color:var(--calcifer);">¥2,500 (約 NT$550)</span></div>
+          <div><strong>塩燒香魚御膳 (Day 2 午餐)</strong> <span style="font-size:0.82rem; color:var(--muted);">岩手名溪炭火香魚定食</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">含於團費</span></div>
         </div>
         <div class="m-item">
-          <div><strong>ずんだ餅 (毛豆泥麻糬)</strong> <span style="font-size:0.82rem; color:var(--muted);">仙台百年招牌甜點</span></div>
-          <div><span style="font-weight:900; color:var(--calcifer);">¥650 (約 NT$143)</span></div>
+          <div><strong>東北米棒鍋套餐 (Day 3 午餐)</strong> <span style="font-size:0.82rem; color:var(--muted);">十和田湖・奧入瀨地道鍋物</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">含於團費</span></div>
         </div>
         <div class="m-item">
-          <div><strong>笹かまぼこ (手烤竹葉魚板)</strong> <span style="font-size:0.82rem; color:var(--muted);">炭烤現吃香酥魚板</span></div>
-          <div><span style="font-weight:900; color:var(--calcifer);">¥300 (約 NT$66)</span></div>
-        </div>
-        <div style="font-size:0.92rem; font-weight:900; color:var(--forest); margin:12px 0 6px;">🍎 青森與秋田名物</div>
-        <div class="m-item">
-          <div><strong>青森りんごパイ (現烤蘋果派)</strong> <span style="font-size:0.82rem; color:var(--muted);">整顆青森蜜蘋果內餡</span></div>
-          <div><span style="font-weight:900; color:var(--calcifer);">¥550 (約 NT$121)</span></div>
+          <div><strong>津輕牛肉御膳 (Day 4 午餐)</strong> <span style="font-size:0.82rem; color:var(--muted);">青森津輕風味牛肉料理</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">含於團費</span></div>
         </div>
         <div class="m-item">
-          <div><strong>きりたんぽ鍋 (秋田米棒鍋定食)</strong> <span style="font-size:0.82rem; color:var(--muted);">比內地雞鮮甜雞湯火鍋</span></div>
-          <div><span style="font-weight:900; color:var(--calcifer);">¥1,800 (約 NT$396)</span></div>
+          <div><strong>雞肉親子鍋御膳 (Day 5 午餐)</strong> <span style="font-size:0.82rem; color:var(--muted);">秋田角館特色鍋物定食</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">含於團費</span></div>
+        </div>
+        <div class="m-item">
+          <div><strong>松島牡蠣御膳 (Day 6 午餐)</strong> <span style="font-size:0.82rem; color:var(--muted);">日本三景松島灣新鮮牡蠣</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">含於團費</span></div>
+        </div>
+        <div style="font-size:0.92rem; font-weight:900; color:var(--forest); margin:12px 0 6px;">🍎 自由活動必吃名物推薦</div>
+        <div class="m-item">
+          <div><strong>牛たん定食 (極厚切牛舌定食)</strong> <span style="font-size:0.82rem; color:var(--muted);">仙台站 / 三井Outlet美食廣場</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">約 ¥2,500 (NT$550)</span></div>
+        </div>
+        <div class="m-item">
+          <div><strong>りんごカレー・りんごアイス</strong> <span style="font-size:0.82rem; color:var(--muted);">弘前蘋果之家：蘋果咖哩與蘋果冰淇淋</span></div>
+          <div><span style="font-weight:900; color:var(--calcifer);">約 ¥500~1,000</span></div>
         </div>
       </div>
     </div>
@@ -813,74 +871,77 @@
         <h3 style="margin-bottom:0;">🗣️ 實用日本旅遊生活會話卡</h3>
         <span style="font-size:0.78rem; font-weight:800; background:#f1ebd9; padding:2px 8px; border-radius:6px; border:1px solid var(--border);">日本語 (Japanese)</span>
       </div>
-      <p style="font-size:0.86rem; color:var(--muted); margin-bottom:12px;">常用旅遊與購物字卡對照：</p>
+      <p style="font-size:0.86rem; color:var(--muted); margin-bottom:12px;">常用旅遊、購物免稅與溫泉飯店字卡對照：</p>
       <div class="p-list">
-        <div class="p-card"><div class="p-cn">你好 (白天問候)</div><div class="p-it">こんにちは</div></div>
-        <div class="p-card"><div class="p-cn">謝謝你</div><div class="p-it">ありがとうございます</div></div>
-        <div class="p-card"><div class="p-cn">不好意思 / 請問</div><div class="p-it">すみません</div></div>
-        <div class="p-card"><div class="p-cn">請給我這個</div><div class="p-it">これをお願いします</div></div>
-        <div class="p-card"><div class="p-cn">買單 / 結帳</div><div class="p-it">お会計をお願いします</div></div>
-        <div class="p-card"><div class="p-cn">可以辦理免稅嗎？</div><div class="p-it">免税できますか？</div></div>
-        <div class="p-card"><div class="p-cn">請問洗手間在哪裡？</div><div class="p-it">トイレはどこですか？</div></div>
+        <div class="p-card"><div class="p-cn">你好 (白天問候)</div><div class="p-it">こんにちは (Konnichiwa)</div></div>
+        <div class="p-card"><div class="p-cn">謝謝你</div><div class="p-it">ありがとうございます (Arigatou gozaimasu)</div></div>
+        <div class="p-card"><div class="p-cn">不好意思 / 請問</div><div class="p-it">すみません (Sumimasen)</div></div>
+        <div class="p-card"><div class="p-cn">請給我這個</div><div class="p-it">これをお願いします (Kore o onegaishimasu)</div></div>
+        <div class="p-card"><div class="p-cn">請問這個多少錢？</div><div class="p-it">これはいくらですか？ (Kore wa ikura desu ka?)</div></div>
+        <div class="p-card"><div class="p-cn">可以辦理免稅嗎？</div><div class="p-it">免税できますか？ (Menzei dekimasu ka?)</div></div>
+        <div class="p-card"><div class="p-cn">露天溫泉在哪裡？</div><div class="p-it">露天風呂はどこですか？ (Rotenburo wa doko desu ka?)</div></div>
+        <div class="p-card"><div class="p-cn">請問洗手間在哪裡？</div><div class="p-it">トイレはどこですか？ (Toire wa doko desu ka?)</div></div>
       </div>
     </div>
   </div>
 
-  <!-- ==================== 6. 費用明細分頁 ==================== -->
-  <div id="sec-pricing" class="main-sec">
-    <div class="card" style="border-left: 6px solid var(--forest);">
-      <h3>💰 團費售價與報價說明</h3>
-      <p>
-        • <strong>售價：</strong><strong style="color:var(--calcifer); font-size:1.2rem;">NT$ 50,800 元 / 人</strong><br>
-        • <strong>孩童佔床：</strong>NT$ 50,800 元 / 人<br>
-        • <strong>孩童不佔床：</strong>NT$ 45,800 元 / 人（未滿 6 歲）<br>
-        • <strong>嬰兒價：</strong>NT$ 6,000 元 / 人（未滿 2 歲）<br>
-        • <strong>服務小費：</strong>司機、導遊、領隊服務小費 <strong>NT$ 300 / 人 / 天 × 6 天 = NT$ 1,800 元</strong>（現場支付）。
-      </p>
-      <div class="tip-box tip-green">🛡️ <strong>包含全套體驗門票：</strong>八甲田山高空纜車、秋田內陸縱貫鐵道、中尊寺金色堂門票、猊鼻溪遊船、松島遊船、弘前採蘋果體驗、烤魚板 DIY，全無自費陷阱！</div>
-    </div>
-    <div class="card">
-      <h3>📦 費用包含項目說明</h3>
-      <p>
-        1. <strong>來回機票：</strong>台灣虎航高雄小港 ⇄ 仙台空港來回經濟艙機票（含 20kg 託運 ＋ 10kg 隨身行李）。<br>
-        2. <strong>全程住宿：</strong>仙台市區優質飯店 2 晚 ＋ <strong>頂級名湯溫泉飯店 3 晚</strong>（兩人一室，享有露天風呂大浴場）。<br>
-        3. <strong>豐盛餐食：</strong>早餐 × 5、午餐 × 4、晚餐 × 4（包含溫泉會席料理、飯店豐盛百匯、秋田米棒鍋、鹽烤香魚定食）。<br>
-        4. <strong>高額責任險：</strong>含 250 萬旅行業責任保險 ＋ 20 萬意外醫療險。<br>
-        5. <strong>特色體驗全包：</strong>八甲山纜車票、秋田鐵道車票、中尊寺金色堂拜觀料、猊鼻溪與松島雙遊船船票、採果入園費。
-      </p>
-    </div>
-  </div>
-
-  <!-- ==================== 7. 溫泉住宿分頁 ==================== -->
+  <!-- ==================== 6. 住宿飯店分頁 ==================== -->
   <div id="sec-hotels" class="main-sec">
     <div class="card" style="border-left: 6px solid #6b21a8;">
-      <h3>♨️ 精選三晚頂級東北溫泉名宿</h3>
-      <p>
-        • <strong>溫泉第 1 晚 (Day 2)：安比高原 ANA 渡假飯店 / 八幡平溫泉</strong><br>
-        &nbsp;&nbsp;坐落於十和田八幡平國立公園旁，享有白樺之湯露天風呂，在澄澈的高原星空下洗滌身心。<br>
-        • <strong>溫泉第 2 晚 (Day 3)：南田溫泉 HOTEL APPLE LAND / 弘前溫泉</strong><br>
-        &nbsp;&nbsp;津輕平原獨創的「蘋果溫泉」！露天風呂水面上漂浮著滿池鮮甜青森紅蘋果，散發清甜果香，美肌效果極佳！<br>
-        • <strong>溫泉第 3 晚 (Day 5)：天童溫泉 瀧之湯 (或王將/榮屋) / 鳴子溫泉</strong><br>
-        &nbsp;&nbsp;將棋之鄉天童溫泉，擁有百年歷史與大浴場，晚宴品嚐精緻山形鄉土旬彩會席料理。
-      </p>
-    </div>
-    <div class="card">
-      <h3>🏨 仙台市區飯店配置</h3>
-      <p>
-        • <strong>第 1 晚 ＆ 第 4 晚：</strong>KOKO HOTEL / ROUTE INN / DORMY INN / 京阪 / 紫苑 / 田澤湖渡假村等同級市區飯店，周邊交通便捷，鄰近商店街與便利商店。
-      </p>
+      <h3>🏨 全程五晚精選住宿飯店一覽 (含四晚溫泉名宿)</h3>
+      <p style="margin-bottom:12px; font-size:0.85rem; color:var(--muted);">全程安排 2 人一室（日本房型多為兩張小床，房間坪數約 16~25㎡）：</p>
+      
+      <div class="tip-box tip-blue" style="margin-bottom:10px;">
+        <strong>📍 DAY 1 ｜ 11/23 (一)：仙台 HILLS HOTEL</strong><br>
+        • 電話：<code>81-22-719-8711</code><br>
+        • 地址：宮城県仙台市泉区実沢中山南25-5
+      </div>
+
+      <div class="tip-box tip-gold" style="margin-bottom:10px;">
+        <strong>♨️ DAY 2 ｜ 11/24 (二)：新安比溫泉靜流閣</strong><br>
+        • 電話：<code>81-195-72-2110</code><br>
+        • 地址：八幡平市叺田43-1
+      </div>
+
+      <div class="tip-box tip-red" style="margin-bottom:10px;">
+        <strong>♨️ DAY 3 ｜ 11/25 (三)：南田溫泉 HOTEL APPLE LAND</strong><br>
+        • 電話：<code>81-172-44-3711</code><br>
+        • 地址：青森県平川市町居南田166-3
+      </div>
+
+      <div class="tip-box tip-green" style="margin-bottom:10px;">
+        <strong>♨️ DAY 4 ｜ 11/26 (四)：雫石王子大飯店 (Shizukuishi Prince Hotel)</strong><br>
+        • 電話：<code>81-196-93-1111</code><br>
+        • 地址：岩手郡雫石町高倉溫泉
+      </div>
+
+      <div class="tip-box tip-gold">
+        <strong>♨️ DAY 5 ｜ 11/27 (五)：天童溫泉 瀧之湯</strong><br>
+        • 電話：<code>81-23-654-2211</code><br>
+        • 地址：山形県天童市鎌田本町1-1-30
+      </div>
     </div>
   </div>
 
-  <!-- ==================== 8. 準備分頁 ==================== -->
+  <!-- ==================== 7. 旅遊須知與準備分頁 ==================== -->
   <div id="sec-tips" class="main-sec">
-    <div class="card">
-      <h3>💡 日本東北深秋行前準備須知</h3>
+    <div class="card" style="border-left: 6px solid var(--calcifer);">
+      <h3>💰 小費建議、時差與電壓資訊</h3>
       <p>
-        • <strong>氣候與洋蔥式穿著：</strong>11 月底東北山區（八甲山、奧入瀨溪、銀山溫泉）氣溫約在 0°C ~ 10°C 之間，清晨與夜晚接近冰點甚至可能初雪！必備羽絨厚外套、發熱衣、圍巾、毛帽與好走防滑健行球鞋。<br>
-        • <strong>電壓與插座：</strong>日本電壓為 100V、雙扁孔插座，台灣一般手機、相機充電器（100-240V 通用）皆可直接插用，無需轉接頭。<br>
-        • <strong>銀山溫泉街管制提醒：</strong>銀山溫泉近年為保護古蹟施行接駁車管制，沿河川木造街區步行拍照請依領隊指揮，注意腳下木橋濕滑。<br>
-        • <strong>泡湯禮儀：</strong>進入浴場前請先在淋浴區將身體清洗乾淨；毛巾不可浸入溫泉池中；有大面積刺青者需遵守各浴場之掩飾規定。
+        • <strong>隨團服務小費：</strong>隨團服務之導遊、領隊、司機每人每日 <strong>新台幣 300 元</strong>（6 天共 NT$ 1,800 元），小孩亦同（嬰兒除外）。<br>
+        • <strong>時差資訊：</strong>日本時間比台灣快 <strong>1 小時</strong>（G.M.T. +9 小時），不實行夏令節約時間。<br>
+        • <strong>電壓與插座：</strong>日本電壓為 <strong>100 伏特</strong>，雙扁孔插座與台灣相同；房間內請避免使用多插頭延長線以免負荷過大。<br>
+        • <strong>出團人數與巴士規定：</strong>本團最低 16 人以上成行，派遣合格領隊隨行；依日本國土交通省規定，每日遊覽車行車時間不得超過 10 小時，請務必遵守領隊宣布之集合時間。
+      </p>
+    </div>
+
+    <div class="card" style="border-left: 6px solid var(--forest);">
+      <h3>🧳 11 月東北深秋氣候穿著與必備清單</h3>
+      <p>
+        • <strong>氣候與衣著建議：</strong>11 月下旬東北早晚溫差大且山區近冰點（八甲山、奧入瀨溪、銀山溫泉），請準備<strong>薄毛衣、發熱衣、防風禦寒厚外套、手套、圍巾、毛襪、毛帽</strong>及防滑好走的鞋子；並隨身攜帶保濕面霜與護唇膏。<br>
+        • <strong>隨身與託運規範：</strong>護照、現金、貴重物品以及<strong>「行動電源與鋰電池」請務必隨身攜帶，切勿託運</strong>；剪刀等銳利物品請放託運，瓦斯等易燃違禁品嚴禁帶上飛機。<br>
+        • <strong>個人盥洗用品：</strong>響應環保請自備個人牙刷、牙膏等盥洗用品、常備藥品與摺疊雨傘。<br>
+        • <strong>飯店內安全提醒：</strong>電熱水壺僅供煮水用，切勿放入茶葉、咖啡粉或泡麵；吧台零食與冰箱飲料需付費；嚴禁於房間內吸菸（違者自負高額罰鍰）。
       </p>
     </div>
   </div>
@@ -895,7 +956,7 @@
     if (jpy > 0) {
       document.getElementById('jpy-calc-note').innerText = '¥' + jpy.toLocaleString() + ' × 0.22 匯率換算';
     } else {
-      document.getElementById('jpy-calc-note').innerText = '輸入金額即刻計算';
+      document.getElementById('jpy-calc-note').innerText = '本行程餐標：中餐 ¥2500~3000 / 晚餐 ¥3000~3500';
     }
   }
 </script>
